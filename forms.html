@@ -6,12 +6,14 @@
 </head>
 <body>
     <form method="POST" action="https://hookb.in/YVBQnO1OkbCgrkMNRqEy">
-        <label for="username-input">Username: </label>
-        <input type="text" id="username-input" name="username" placeholder="Enter A Username">
+        <h3>Please Enter Your Email And Password:</h3>
+        <label for="email-input">Email: </label>
+        <input type="email" id="email-input" name="email" placeholder="Enter An Email">
         <label for="password-input">Password: </label>
         <input type="password" id="password-input" name="password" placeholder="Enter A Password">
+        <br>
 
-        <h3>Enter a short description about yourself: </h3>
+        <h3>Enter a short bio about yourself: </h3>
         <textarea name="bio" id="bio-input" cols="80" rows="10"></textarea>
         
         <h3>How did you hear about us?</h3>
@@ -28,6 +30,7 @@
             Other <input type="radio" id="hear-about-other" name="hear-about" value="other">
         </label>
         <br>
+        <br>
 
         <label for="web-browser-input">What Web Browser Are You Using: </label>
         <select name="web-browser" id="web-browser-input">
@@ -35,6 +38,7 @@
             <option value="firefox">Firefox</option>
             <option value="brave">Brave</option>
         </select>
+        <br>
         <br>
 
         <button type="submit">Submit</button>
