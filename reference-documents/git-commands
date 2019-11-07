@@ -1,0 +1,9 @@
+Git Commands
+
+git add file.name (or just a . to add everything in project)
+git commit -m "Messge to convey to GitHub when you push"
+git push origin master
+
+To Override and replace everything with the master branch:
+git reset --hard origin/master
+!!!This will override any changes you have made and update with where the master branch is!!!
