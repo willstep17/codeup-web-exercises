@@ -1,5 +1,9 @@
 Git Commands
 
+Initialize a git repository in a directory:
+git init
+
+Normal Route to Update Master Branch:
 git add file.name (or just a . to add everything in project)
 git commit -m "Messge to convey to GitHub when you push"
 git push origin master
