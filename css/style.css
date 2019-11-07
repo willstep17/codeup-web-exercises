@@ -1,3 +1,43 @@
+body {
+    background-image: url(../img/herringbone.png);
+    font-family: 'Jomolhari', serif;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+li {
+    list-style: square;
+}
+
+table, th, tr {
+    font-size: 20px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+a:hover {
+    color: crimson;
+    font-style: italic;
+}
+
+a:link {
+    color: beige;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: aquamarine;
+}
+
+.centered {
+    text-align: center;
+}
+
 .fancy-header {
     color: purple;
     text-decoration: underline;
@@ -5,12 +45,4 @@
 
 #main-header {
     text-align: center;
-}
-
-body {
-    background-image: url(../img/herringbone.png);
-}
-
-h2 {
-    text-decoration: underline;
 }
