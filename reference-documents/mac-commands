@@ -4,3 +4,6 @@ command + /
 Multiple Cursors:
 option + command + shift
 
+Launch Javascript Panel:
+option + command + j
+
