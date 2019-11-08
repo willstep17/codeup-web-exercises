@@ -40,6 +40,11 @@ a:active {
     color: aquamarine;
 }
 
+.company-vision {
+    position: relative;
+    text-align: center;
+}
+
 .centered {
     text-align: center;
     font-size: 21px;
