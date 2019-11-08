@@ -1,6 +1,7 @@
-body {
+#body {
     background-image: url(../img/herringbone.png);
-    font-family: 'Jomolhari', serif;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: magenta;
 }
 
 h2 {
@@ -8,7 +9,7 @@ h2 {
     font-size: 30px;
 }
 
-li {
+ul {
     list-style: square;
 }
 
@@ -17,10 +18,10 @@ table th {
     font-size: 40px;
 }
 
-table, th, tr {
+table, th, tr, td {
     text-align: center;
     font-size: 20px;
-    padding: 19px;
+    padding: 10px;
 }
 
 a:hover {
