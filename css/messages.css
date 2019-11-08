@@ -2,11 +2,11 @@
     --bg-info: #bfdee6;
     --text-info: blue;
     --bg-success: #c5eeb5;
-    --text-success: green;
+    --text-success: #006800;
     --bg-warning: #fffca6;
-    --text-warning: #ff8f2b;
+    --text-warning: #915616;
     --bg-error: #ffd1e7;
-    --text-error: red;
+    --text-error: #560700;
     font-size: 11px;
 }
 
@@ -20,9 +20,9 @@ body, html {
 
 .message {
     border: 1px solid lightgray;
-    padding: .6em;
+    padding: .63em;
     margin: .6em;
-    border-radius: 4px;
+    border-radius: .4em;
 }
 
 .message-info {
