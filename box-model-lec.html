@@ -28,6 +28,41 @@
 			>>> For more info on box-sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 		*/
 
+		.box {
+			width: 200px;
+			height:200px;
+			padding: 5px;
+			border: 5px solid black;
+			margin: 10px;
+		}
+
+		.first-box {
+			background-color: turquoise;
+		}
+
+		.second-box {
+			background-color: #FF335B;
+			box-sizing: border-box;
+		}
+
+		div {
+			border: 1px solid black;
+		}
+
+		p {
+			border: 1px solid orange;
+		}
+
+		span {
+			border: 1px solid purple;
+		}
+
+		/* The asterisk adds styles to every element on the page.
+		* {
+			box-sizing: border-box;
+		}
+		*/
+
 	</style>
 </head>
 <body>
@@ -38,7 +73,17 @@
 	<h4>Here are some boxes...</h4>
 	<!--	TODO TOGETHER: EXPLORE BOXES. -->
 
+	<div class="box first-box">
+		<h1>First Box</h1>
+		<p>Content-Box Model</p>
+		<p>Total width of this box is 200px + 10px(padding) + 10px(border) = 220px.</p>
+	</div>
 
+	<div class="box second-box">
+		<h1>Second Box</h1>
+		<p>Border-Box Model</p>
+		<p>Total width of this box is 200px.</p>
+	</div>
 
 
 
