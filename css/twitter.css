@@ -60,18 +60,21 @@ a {
     float: right;
     line-height: 80px;
 }
+profile-entry {
+    margin: .5em;
+}
 .container {
     position: relative;
     top: 2em;
+}
+.profile-items {
+    list-style: none;
+    padding: 0;
 }
 .profile-details {
     float: left;
     width: calc(25% - 1em);
     margin: 0 .5em;
-}
-.profile-items {
-    list-style: none;
-    padding: 0;
 }
 .timeline {
     float: left;
