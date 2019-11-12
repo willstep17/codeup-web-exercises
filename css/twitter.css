@@ -69,6 +69,10 @@ a {
     width: calc(25% - 1em);
     margin: 0 .5em;
 }
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
 .timeline {
     float: left;
     width: calc(50% - 1em);

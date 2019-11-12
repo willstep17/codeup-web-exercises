@@ -11,3 +11,7 @@ git push origin master
 To pull OVERRIDE and REPLACE everything with the master branch:
 !!!This will override any changes you have made and update with where the master branch is!!!
 git reset --hard origin/master
+
+Store the changes in a dirty working directory. Reverts the working directory to match the HEAD commit.
+git stash
+git stash list
