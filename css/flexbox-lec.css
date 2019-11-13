@@ -15,9 +15,22 @@ body {
     width: 100%;
     border: 3px solid goldenrod;
     display: flex;
+    flex-direction: row;
+    height: 10em;
 }
 .flex-item {
     background: #BFD45D;
     border: 2px solid #F9EFD6;
     padding: 1em;
+}
+.first-item {
+/*    font-size: 15px;*/
+}
+.second-item {
+    flex-grow: 1;
+/*    font-size: 30px;*/
+}
+.third-item {
+    flex-grow: 2;
+/*    font-size: 45px;*/
 }
