@@ -52,9 +52,11 @@ body {
 /*flex solution*/
 .cover {
     /* flex container */
+    display: flex;
 }
 .flex-form {
     /* flex items */
+    margin: auto;
 }
 .destination {
     /* bigger item */
