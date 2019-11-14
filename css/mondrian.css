@@ -24,7 +24,7 @@ main div {
     align-items: flex-start;
 }
 .one {
-    grid-area: 1/1/3/2;
+    grid-area: 1/1/3/4;
     background: blue;
 }
 .two {
