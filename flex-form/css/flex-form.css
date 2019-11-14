@@ -58,9 +58,11 @@ body {
 }
 .flex-form {
     /* flex items */
+    display: flex;
+    flex-flow: row;
     margin: auto;
 }
 .destination {
+    flex-basis: 30%;
     /* bigger item */
-    margin: auto;
 }
