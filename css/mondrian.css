@@ -6,19 +6,19 @@ body {
     text-align: center;
 }
 main {
-    background: lightgreen;
+    background: antiquewhite;
     margin: 1em;
     display: grid;
     width: 500px;
     height: 500px;
-    border: 5px solid black;
+    border: 4px solid black;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 main div {
     font-size: 2em;
     color: white;
-    border: 5px solid black;
+    border: 4px solid black;
     display: flex;
     justify-content: center;
     align-items: flex-start;
