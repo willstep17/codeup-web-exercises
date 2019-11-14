@@ -1,12 +1,11 @@
-* {
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-}
-
 a {
+    color: black;
     display: inline-block;
     list-style: none;
     text-decoration: none;
@@ -16,8 +15,12 @@ ul {
     list-style: none;
 }
 
-a:hover {
+nav a:hover {
     color: blue;
+}
+
+.nav-container a {
+    padding: 0 1em;
 }
 
 .nav-container {
@@ -43,12 +46,12 @@ a:hover {
     align-items: center;
 }
 
-.nav-logo {
+.nav-logo a {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     padding: .2em 0;
 }
 
 .nav-item {
-    padding: 0 1em;
+    padding: 0;
 }

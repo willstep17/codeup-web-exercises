@@ -67,11 +67,11 @@ a {
 
 .container {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     /* This is a flex container */
 }
 
 .card {
-    align-self: center;
+    flex-basis: 100%;
     /* This is a flex item */
 }
