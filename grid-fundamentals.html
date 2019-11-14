@@ -15,8 +15,13 @@
             background: lightgreen;
             margin-top: 2em;
             display: grid;
-            grid-template-columns: 200px 200px 200px 200px;
-            grid-template-rows: 200px 200px 200px;
+            height: 75em;
+            /*grid-template-columns: 1fr 1fr 2fr;*/
+            /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
+            grid-template-areas:
+                    "one one . . ."
+                    "one one . two ."
+                    ". three three . .";
             grid-gap: 20px;
         }
         main div {
@@ -26,22 +31,41 @@
             border: 2px solid black;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
+        .four {
+            display: none;
+        }
+        .five {
+            display: none;
+        }
+        .six {
+            display: none;
+        }
+        /*.one {grid-area: 1 / 1 / 2 / 3}*/
+        /*.two {grid-area: 1 / 2 / 2 / 3}*/
+        /*.three {grid-area: 1 / 3 / 2 / 4}*/
+        /*.four {grid-area: 2 / 2 / 4 / 3}*/
+        /*.five {grid-area: 2 / 2 / 3 / 3}*/
+        /*.six {grid-area: 2 / 3 / 3 / 4}*/
+        /*.seven {grid-area: 3 / 1 / 4 / 2}*/
+        /*.eight {grid-area: 5 / 1 / 6 / 3}*/
+        /*.nine {grid-area: 4 / 1 / 5 / 4}*/
+        /*.ten {grid-area: 4 / 1 / 5 / 4}*/
     </style>
 </head>
 <body>
 <main>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="five">5</div>
+    <div class="six">6</div>
+    <div class="seven">7</div>
+    <div class="eight">8</div>
+    <div class="nine">9</div>
+    <div class="ten">10</div>
 </main>
 </body>
 </html>
