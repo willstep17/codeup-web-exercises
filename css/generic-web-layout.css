@@ -12,7 +12,7 @@ h2 {
 
 .wrapper {
     background: white;
-    height: 100vw;
+    height: 90vw;
     display: grid;
     grid-template-columns: 1fr 75% 1fr;
     grid-template-rows: 64px 108px 100%;
