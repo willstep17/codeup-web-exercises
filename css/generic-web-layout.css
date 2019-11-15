@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+}
+
+h2 {
+    margin: 10px
+}
+
+.wrapper {
+    background: white;
+    height: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 75% 1fr;
+    grid-template-rows: 64px 108px 100%;
+    grid-template-areas:
+            "header header header"
+            "gutter nav gutter2"
+            "gutter main gutter2";
+    grid-gap: 10px;
+}
+
+.wrapper>section {
+    background: #9bce0a;
+}
+
+#header {
+    grid-area: header;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#main {
+    grid-area: main;
+}
+
+#gutter {
+    grid-area: gutter;
+}
+
+#gutter2 {
+    grid-area: gutter2;
+}
