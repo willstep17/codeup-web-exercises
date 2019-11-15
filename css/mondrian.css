@@ -29,39 +29,39 @@ main div {
     justify-content: center;
     align-items: flex-start;
 }
-.one {
+#one {
     grid-area: 1/1/3/3;
     background: var(--blue);
 }
-.two {
+#two {
     grid-area: 1/3/4/9;
     background: var(--red);
 }
-.three {
+#three {
     grid-area: 3/1/6/3;
     background: var(--yellow);
 }
-.four {
+#four {
     grid-area: 4/3/8/5;
     background: var(--white);
 }
-.five {
+#five {
     grid-area: 4/5/6/9;
     background: var(--white);
 }
-.six {
+#six {
     grid-area: 6/1/8/3;
     background: var(--white);
 }
-.seven {
+#seven {
     grid-area: 6/5/8/9;
     background: var(--yellow);
 }
-.eight {
+#eight {
     grid-area: 8/1/9/3;
     background: var(--red);
 }
-.nine {
+#nine {
     grid-area: 8/3/9/9;
     background: var(--blue);
 }
