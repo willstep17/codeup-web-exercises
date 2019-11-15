@@ -50,6 +50,7 @@ section:nth-of-type(1) {
     background: lightgreen;
     /* enter needed declarations here */
 }
+
 section:nth-of-type(1) div:last-child {
     align-self: flex-start;
     /* enter needed declarations here */
