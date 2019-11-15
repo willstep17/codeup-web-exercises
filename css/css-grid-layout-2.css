@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+}
+
+h2 {
+    margin: 10px
+}
+
+.wrapper {
+    background: white;
+    height: 90vh;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "nav article"
+        "nav adds"
+        "footer footer";
+    grid-gap: 10px;
+}
+
+.wrapper>section {
+    background: #9bce0a;
+}
+
+#header {
+    grid-area: header;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#article {
+    grid-area: article;
+}
+
+#adds {
+    grid-area: adds;
+}
+
+#footer {
+    grid-area: footer;
+}
