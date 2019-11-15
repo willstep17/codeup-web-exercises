@@ -1,3 +1,9 @@
+:root {
+    --red: #dc1b21;
+    --blue: #2f447a;
+    --yellow: #fccc08;
+    --white: #ffffff;
+}
 * {
     box-sizing: border-box;
 }
@@ -25,37 +31,37 @@ main div {
 }
 .one {
     grid-area: 1/1/3/3;
-    background: blue;
+    background: var(--blue);
 }
 .two {
     grid-area: 1/3/4/9;
-    background: red;
+    background: var(--red);
 }
 .three {
     grid-area: 3/1/6/3;
-    background: yellow;
+    background: var(--yellow);
 }
 .four {
     grid-area: 4/3/8/5;
-    background: white;
+    background: var(--white);
 }
 .five {
     grid-area: 4/5/6/9;
-    background: white;
+    background: var(--white);
 }
 .six {
     grid-area: 6/1/8/3;
-    background: white;
+    background: var(--white);
 }
 .seven {
     grid-area: 6/5/8/9;
-    background: yellow;
+    background: var(--yellow);
 }
 .eight {
     grid-area: 8/1/9/3;
-    background: red;
+    background: var(--red);
 }
 .nine {
     grid-area: 8/3/9/9;
-    background: blue;
+    background: var(--blue);
 }
