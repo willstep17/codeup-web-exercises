@@ -21,7 +21,7 @@ ul {
     background: white;
     display: grid;
     grid-template-columns: 1fr 6fr;
-    grid-template-rows: 2em 100% 4em 2em;
+    grid-template-rows: 2em 1fr 4em 2em;
     grid-template-areas:
             "header header"
             "nav main"
@@ -86,7 +86,7 @@ ul {
 #second-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-auto-rows: auto;
+    grid-template-rows: max-content;
     grid-template-areas:
             "main-content adds";
 }
