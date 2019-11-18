@@ -1,8 +1,8 @@
+/* Mobile */
 * {
     box-sizing: border-box;
 }
 
-/* Mobile */
 h1, .alert-info, .nav-links {
     text-align: center;
 }
