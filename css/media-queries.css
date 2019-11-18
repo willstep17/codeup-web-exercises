@@ -1,5 +1,5 @@
 /* Mobile */
-* {
+body {
     box-sizing: border-box;
 }
 
@@ -45,7 +45,7 @@ ul.nav-links {
 .header-img img {
     display: flex;
     margin: auto;
-    width: 339px;
+    width: 100%;
 }
 
 .main {
@@ -58,7 +58,15 @@ ul.nav-links {
 }
 
 footer {
+    justify-content: space-between;
+    display: flex;
     font-size: 14px;
+    align-items: center;
+}
+
+.social-media-links{
+    position: absolute;
+    margin-right: 0;
 }
 
 /* Desktop */
@@ -114,7 +122,7 @@ footer {
     }
 
     .header-img>img {
-        width: 890px;
+        width: 100%;
     }
 
     .main {
