@@ -12,37 +12,39 @@ h2 {
 
 .wrapper {
     background: white;
-    height: 90vw;
+    width: 90vw;
     display: grid;
-    grid-template-columns: 1fr 75% 1fr;
-    grid-template-rows: 64px 108px 100%;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 64px 100% 124px 64px;
     grid-template-areas:
-            "header header header"
-            "gutter nav gutter2"
-            "gutter main gutter2";
-    grid-gap: 10px;
-}
-
-.wrapper>section {
-    background: #9bce0a;
+            "header header"
+            "nav main"
+            "nav footerOne"
+            "nav footerTwo";
 }
 
 #header {
+    background: black;
     grid-area: header;
 }
 
 #nav {
+    background: lightgray;
     grid-area: nav;
 }
 
 #main {
+    background: white;
     grid-area: main;
 }
 
-#gutter {
-    grid-area: gutter;
+#footerOne {
+    background: darkgrey;
+    grid-area: footerOne;
 }
 
-#gutter2 {
-    grid-area: gutter2;
+#footerTwo {
+    background: #636363;
+    grid-area: footerTwo;
 }
+

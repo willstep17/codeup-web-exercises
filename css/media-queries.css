@@ -1,0 +1,11 @@
+@media all and (min-width: 1000px) {
+    body {
+        background: #FF335B;
+    }
+}
+
+@media all and (max-width: 999px) {
+    body {
+        background: cadetblue;
+    }
+}
