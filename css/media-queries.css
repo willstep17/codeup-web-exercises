@@ -1,11 +1,137 @@
-@media all and (min-width: 1000px) {
+* {
+    box-sizing: border-box;
+}
+
+/* Mobile */
+h1, .alert-info, .nav-links {
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Work Sans', sans-serif;
+    margin: .25em 0;
+}
+
+.alert-info {
+    display: flex;
+    width: auto;
+    height: 3em;
+    background: skyblue;
+    border: 1px solid grey;
+}
+
+.alert-info a {
+    font-size: 18px;
+    margin: auto;
+    color: black;
+    text-decoration: none;
+}
+
+ul.nav-links {
+    display: flex;
+    padding: 0;
+    margin: auto;
+    flex-direction: column;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 1em;
+    margin: .5em;
+    background: lightgray;
+}
+
+.header-img img {
+    display: flex;
+    margin: auto;
+    width: 339px;
+}
+
+.main {
+
+}
+
+.sub-section {
+    margin: 3em 0;
+    font-style: italic;
+}
+
+footer {
+    font-size: 14px;
+}
+
+/* Desktop */
+@media all and (min-width: 420px) {
     body {
-        background: #FF335B;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas:
+                "company nav-links"
+                "header-img header-img"
+                "main sub-section"
+                "footer footer";
+    }
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        text-align: left;
+        grid-area: company;
+    }
+
+    nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    ul.nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-links li {
+        padding: .5em;
+        margin: .5em;
+        background: white;
+    }
+
+    .header-img {
+        grid-area: header-img;
+    }
+
+    .header-img>img {
+        width: 890px;
+    }
+
+    .main {
+        grid-area: main;
+        padding-right: 2em;
+    }
+
+    .sub-section {
+        grid-area: sub-section;
+    }
+
+    section.sub-section {
+        margin: 0;
+    }
+
+    footer {
+        grid-area: footer;
     }
 }
 
-@media all and (max-width: 999px) {
-    body {
-        background: cadetblue;
-    }
-}
