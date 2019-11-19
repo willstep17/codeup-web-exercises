@@ -1,4 +1,4 @@
-/* Mobile */
+/* Mobile Default */
 body {
     box-sizing: border-box;
     display: flex;
@@ -61,10 +61,10 @@ h1 {
 }
 
 footer {
-    justify-content: space-between;
     display: flex;
-    font-size: 14px;
+    justify-content: space-between;
     align-items: center;
+    font-size: 14px;
 }
 
 #social-media-links i {
@@ -72,7 +72,7 @@ footer {
 }
 
 /* Desktop */
-@media all and (min-width: 420px) {
+@media all and (min-width: 500px) {
     body {
         display: grid;
         grid-template-columns: 3fr 2fr;
