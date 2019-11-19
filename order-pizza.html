@@ -5,9 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- BOOTSTRAP CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Order Pizza</title>
+    <script src="https://kit.fontawesome.com/6c58774688.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
@@ -17,7 +20,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -26,15 +28,106 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
+                <li>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search Stores Near You!</button>
+                    </form>
+                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Stores Near You!</button>
-            </form>
+            <a href="#" class="text-dark"><i class="fas fa-user-plus"></i> Sign Up</a>
         </div>
     </nav>
     <!-- END NAVBAR -->
 
+    <div id="main-container">
+
+        <!-- JUMBOTRON -->
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to Pizza World!</h1>
+        </div>
+        <!-- END JUMBOTRON -->
+
+        <br>
+        <h2>Build Your Own Pizza!</h2>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="size-crust-tab" data-toggle="tab" href="#size-crust" role="tab" aria-controls="size-crust" aria-selected="true"><span class="badge badge-pill badge-dark">1</span> Size and Crust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cheese-sauce-tab" data-toggle="tab" href="#cheese-sauce" role="tab" aria-controls="cheese-sauce" aria-selected="false"><span class="badge badge-pill badge-dark">2</span> Cheese and Sauce</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-pill badge-dark">3</span> Toppings</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="size-crust" role="tabpanel" aria-labelledby="size-crust-tab">
+                <!-- Size and Crust Card -->
+                <div class="card">
+                    <div class="card-header bg-primary text-light">
+                        Choose Size and Crust
+                    </div>
+                    <div class="card-body">
+                        <!-- Hand Tossed Card -->
+                        <div class="card">
+                            <div class="card-header">
+                                Hand Tossed
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </div>
+                        <!-- Crispy Thin Card -->
+                        <div class="card">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="cheese-sauce" role="tabpanel" aria-labelledby="cheese-sauce-tab">
+                <div class="card">
+                    <div class="card-header bg-primary text-light">
+                        Choose Cheese and Sauce
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+                <div class="card">
+                    <div class="card-header bg-primary text-light">
+                        Choose Toppings
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOOTSTRAP CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
