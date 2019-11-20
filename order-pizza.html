@@ -40,15 +40,14 @@
     </nav>
     <!-- END NAVBAR -->
 
-    <div id="main-container">
+    <div class="container">
 
         <!-- JUMBOTRON -->
-        <div class="jumbotron">
+        <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4">Welcome to Pizza World!</h1>
         </div>
         <!-- END JUMBOTRON -->
 
-        <br>
         <h2>Build Your Own Pizza!</h2>
 
         <!-- Nav tabs -->
@@ -74,14 +73,18 @@
                     </div>
                     <div class="card-body">
                         <!-- Hand Tossed Card -->
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header">
                                 Hand Tossed
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="hand-small" checked autocomplete="off"> Small (10")
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="hand-large" autocomplete="off"> Medium (12")
+                                </li>
                             </ul>
                         </div>
                         <!-- Crispy Thin Card -->
@@ -91,37 +94,68 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="thin-small" autocomplete="off"> Small (10")
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="thin-large" autocomplete="off"> Medium (12")
+                                </li>
                             </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary float-right">Next Step <i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="tab-pane" id="cheese-sauce" role="tabpanel" aria-labelledby="cheese-sauce-tab">
+                <!-- Cheese and Sauce Card -->
                 <div class="card">
                     <div class="card-header bg-primary text-light">
                         Choose Cheese and Sauce
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <!-- Cheese Card -->
+                        <div class="card">
+                            <div class="card-header">
+                                How Much
+                            </div>
+                            <div class="card-body">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" name="cheese-select" id="cheese-select-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Light
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item" name="cheese-select" id="light-cheese" type="button">Light</button>
+                                        <button class="dropdown-item" name="cheese-select" id="medium-cheese" type="button">Medium</button>
+                                        <button class="dropdown-item" name="cheese-select" id="heavy-cheese" type="button">Heavy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Crispy Thin Card -->
+                        <div class="card">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="placeholder2" autocomplete="off"> Small (10")
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust-select" id="placeholder" autocomplete="off"> Medium (12")
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary float-right">Next Step <i class="fas fa-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="tab-pane" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
-                <div class="card">
-                    <div class="card-header bg-primary text-light">
-                        Choose Toppings
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+
             </div>
         </div>
 
