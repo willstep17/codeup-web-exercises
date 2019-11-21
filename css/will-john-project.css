@@ -7,6 +7,10 @@
     --gray: #E6E6E6;
 }
 
+body {
+    background-color: var(--gray);
+}
+
 #logo {
     height: 105px;
     width: 105px;
