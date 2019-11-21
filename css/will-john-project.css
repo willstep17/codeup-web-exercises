@@ -1,4 +1,4 @@
-:root {
+#bootstrap-overrides :root {
     --red: #E6563B;
     --orange: #EB9D3A;
     --light-green: #7CB06C;
@@ -7,45 +7,45 @@
     --gray: #E6E6E6;
 }
 
-body {
+#bootstrap-overrides body {
     background-color: var(--gray);
 }
 
-#logo {
+#bootstrap-overrides #logo {
     height: 105px;
     width: 105px;
 }
 
-.icon {
+#bootstrap-overrides .icon {
     height: 18px;
     width: 18px;
 }
 
-h1 {
+#bootstrap-overrides h1 {
     font-size: 64px;
     font-family: 'Anton', sans-serif;
 }
 
-h2 {
+#bootstrap-overrides h2 {
     font-size: 48px;
     font-family: 'Anton', sans-serif;
 }
 
-h3 {
+#bootstrap-overrides h3 {
     font-size: 40px;
     font-family: 'Anton', sans-serif;
 }
 
-h4 {
+#bootstrap-overrides h4 {
     font-size: 32px;
     font-family: 'Anton', sans-serif;
 }
 
-h5 {
+#bootstrap-overrides h5 {
     font-size: 28px;
     font-family: 'Anton', sans-serif;
 }
 
-p {
+#bootstrap-overrides p {
     font-family: 'Abel', sans-serif;
 }
