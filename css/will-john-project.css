@@ -49,3 +49,25 @@
 #bootstrap-overrides p {
     font-family: 'Abel', sans-serif;
 }
+
+#bootstrap-overrides #nbcolor {
+    height: 8em;
+    background-color: lightgrey;
+}
+
+#bootstrap-overrides #main-logo{
+    width: 105px;
+    height: 105px;
+    margin-top: -1em;
+}
+
+#bootstrap-overrides .nbstripe {
+    background: white;
+    opacity: 0.9;
+    color: white;
+    width: 115%;
+    height: 75px;
+}
+#bootstrap-overrides .title-container {
+    background: #f8f9fa !important;
+}
