@@ -1,3 +1,5 @@
+//Exercise
+// 3-A
 function totalPrice(movie) {
     console.log("Renting " + movie.name + " costs $" + (movie.days * 3) +".00.");
 }
@@ -10,6 +12,7 @@ totalPrice(mermaid);
 totalPrice(bear);
 totalPrice(hercules);
 
+//Exercise 3-B
 function pay(salary, hoursWorked) {
     return salary * hoursWorked;
 }
@@ -20,6 +23,7 @@ var facebookSal = 350;
 
 console.log(pay(facebookSal, 10) + pay(googleSal, 6) + pay(amazonSal, 4));
 
+//Exercise 3-C
 function canEnroll(full, conflict) {
     return (!full && !conflict) ? "You can enroll." : "You cannot enroll.";
 }
@@ -27,6 +31,25 @@ function canEnroll(full, conflict) {
 isFull = true;
 isConflict = false;
 
-console.log(canEnroll(isFull, isConflict));
+console.log(canEnroll(isFull, isConflict)); //Cannot Enroll
+console.log(canEnroll(false, false)); //Can Enroll
 
+//Exercise 3-D
+function offerValid(premium, numberOfProducts, expired) {
+    if(premium && !expired) {
+        return "You can buy this.";
+    } else if(numberOfProducts > 2 && !expired) {
+        return "You can buy this.";
+    } else {
+        return "You cannot buy this."
+    }
+}
+
+console.log(offerValid(true, 1, false)); //Can Buy
+console.log(offerValid(true, 2, true)); //Cannot Buy
+console.log(offerValid(false , 2, false)); //Cannot Buy
+console.log(offerValid(false, 3, false)); //Can Buy
+console.log(offerValid(false, 26, true)); //Cannot Buy
+
+//Exercise 4
 
