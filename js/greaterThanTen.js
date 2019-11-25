@@ -1,5 +1,5 @@
-function greaterThanTen(number) {
-    return (number > 10);
+function greaterThanTen(numInput) {
+    return numInput > 10;
 }
 
 console.log(greaterThanTen(2));
