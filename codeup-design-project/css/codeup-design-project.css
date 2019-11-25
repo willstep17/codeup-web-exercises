@@ -30,7 +30,13 @@ body {
 #mobile-logo, #small-logo, #medium-up-logo {
     height: 105px;
     width: 105px;
+}
+
+.logo-background {
     margin-top: 1em;
+    height: 105px;
+    width: 100%;
+    background-image: linear-gradient(var(--gray) 0%, var(--gray) 25%, var(--white) 25%, var(--white) 75%, var(--gray) 75%, var(--gray) 100%);
 }
 
 .circle-btn {
