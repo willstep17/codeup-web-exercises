@@ -27,7 +27,7 @@ body {
     background-color: var(--gray);
 }
 
-#logo {
+#mobile-logo, #small-logo, #medium-up-logo {
     height: 105px;
     width: 105px;
     margin-top: 1em;
