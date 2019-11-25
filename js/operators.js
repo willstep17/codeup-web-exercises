@@ -1,6 +1,6 @@
 //Data Types Exercise 3-A
 function totalPrice(movie) {
-    console.log("Renting " + movie.name + " costs $" + (movie.days * 3) +".00.");
+    console.log("Renting " + movie.name + " for " + movie.days + " day(s) costs $" + (movie.days * 3) +".00.");
 }
 
 var mermaid = {days: 3, name: "The Little Mermaid"};
@@ -35,17 +35,11 @@ console.log(canEnroll(false, false)); //Can Enroll
 
 //Data Types Exercise 3-D
 function offerValid(premium, numberOfProducts, expired) {
-    if(premium && !expired) {
-        return "You can buy this.";
-    } else if(numberOfProducts > 2 && !expired) {
-        return "You can buy this.";
-    } else {
-        return "You cannot buy this.";
-    }
+    return (!expired && (numberOfProducts > 2 || premium)) ? "Offer Valid" : "Offer Invalid";
 }
 
-console.log(offerValid(true, 1, false)); //Can Buy
-console.log(offerValid(true, 2, true)); //Cannot Buy
-console.log(offerValid(false , 2, false)); //Cannot Buy
-console.log(offerValid(false, 3, false)); //Can Buy
-console.log(offerValid(false, 26, true)); //Cannot Buy
+console.log(offerValid(true, 1, false)); //Offer Valid
+console.log(offerValid(true, 2, true)); //Offer Invalid
+console.log(offerValid(false, 2, false)); //Offer Valid
+console.log(offerValid(false, 3, false)); //Offer Valid
+console.log(offerValid(false, 26, true)); //Offer Invalid
