@@ -27,14 +27,19 @@ body {
     background-color: var(--gray);
 }
 
-#mobile-logo, #small-logo, #medium-up-logo {
+#small-logo, #medium-up-logo {
     height: 105px;
     width: 105px;
 }
 
+#mobile-logo {
+    height: 200px;
+    width: 200px;
+}
+
 .logo-background {
-    margin-top: 1em;
-    height: 105px;
+    margin: 1em 0 0 0;
+    height: 100%;
     width: 100%;
     background-image: linear-gradient(var(--gray) 0%, var(--gray) 25%, var(--white) 25%, var(--white) 75%, var(--gray) 75%, var(--gray) 100%);
 }
@@ -97,10 +102,6 @@ p {
     color: white;
 }
 
-.ul-center {
-    margin-top: 3rem;
-}
-
 .btn-circle.btn-sm {
     width: 18px;
     height: 18px;
@@ -109,8 +110,11 @@ p {
     font-size: 8px;
     text-align: center;
     line-height: 50%;
-    margin-right: .5em;
-    margin-top: .5em;
+}
+
+.codeup-design-mobile {
+    font-size:50px;
+    font-family: 'Abel', sans-serif;
 }
 
 .custom {
