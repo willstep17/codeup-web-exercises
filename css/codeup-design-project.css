@@ -1,0 +1,137 @@
+:root {
+    --red: #E6563B;
+    --orange: #EB9D3A;
+    --light-green: #7CB06C;
+    --blue: #00ABA9;
+    --white: #F0F0F0;
+    --gray: #E6E6E6;
+}
+
+.red {
+    background: var(--red);
+}
+
+.orange {
+    background: var(--orange);
+}
+
+.light-green {
+    background: var(--light-green);
+}
+
+.blue {
+    background: var(--blue);
+}
+
+body {
+    background-color: var(--gray);
+}
+
+#logo {
+    height: 105px;
+    width: 105px;
+    margin-top: 1em;
+}
+
+.circle-btn {
+    justify-content: end;
+}
+
+.icon {
+    height: 18px;
+    width: 18px;
+}
+
+a{
+    color: black;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+
+p {
+    font-family: 'Abel', sans-serif;
+}
+
+.header-circles {
+    height: 130px;
+    width: 130px;
+    border: 5px solid white;
+    color: white;
+}
+
+
+
+.ul-center {
+    margin-top: 3rem;
+}
+
+
+.sm-circle-pos{
+    margin-left: 10%;
+    padding: 5%;
+}
+
+.sm-circle{
+    margin-right: 3em;
+}
+
+#vdwd{
+    margin-right:20%;
+    margin-left:20%;
+    text-align: center;
+}
+
+
+
+.btn-circle.btn-sm {
+    width: 18px;
+    height: 18px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+    line-height: 50%;
+    margin-right: .5em;
+    margin-top: .5em;
+}
+
+.custom {
+    padding-bottom: .25em;
+    margin-bottom: 1em;
+    background: var(--gray);
+    border: none;
+}
+
+
+.last-tweet {
+    font-size: 28px;
+}
