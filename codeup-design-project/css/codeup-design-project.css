@@ -83,7 +83,13 @@ a {
     margin: 1em 0 0 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(var(--gray) 0%, var(--gray) 25%, var(--white) 25%, var(--white) 75%, var(--gray) 75%, var(--gray) 100%);
+    background-image: linear-gradient(
+                        var(--gray) 0%,
+                        var(--gray) 25%,
+                        var(--white) 25%,
+                        var(--white) 75%,
+                        var(--gray) 75%,
+                        var(--gray) 100%);
 }
 
 .codeup-design-mobile {
@@ -109,8 +115,8 @@ a {
 }
 
 .header-circles {
-    height: 130px;
-    width: 130px;
+    height: 110px;
+    width: 110px;
     border: 5px solid white;
     color: white;
 }
@@ -122,7 +128,7 @@ a {
 
 .small-up-h5 {
     margin-top: 1.5em;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .sm-circle-pos {
