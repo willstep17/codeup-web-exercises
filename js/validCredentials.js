@@ -36,4 +36,9 @@ function credentialLock(credentialKey) {
 var username = 'codeup';
 var password = 'notastrongpassword';
 
-console.log(credentialLock(buildCredentialKey(username, password)));
+console.log(credentialLock(buildCredentialKey(username, password))); //VALID CREDENTIALS
+
+username = '    codeup';
+password = 'shrt';
+
+console.log(credentialLock(buildCredentialKey(username, password))); //INVALID CREDENTIALS
