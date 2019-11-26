@@ -27,40 +27,6 @@ body {
     background-color: var(--gray);
 }
 
-#small-logo, #medium-up-logo {
-    height: 105px;
-    width: 105px;
-}
-
-#mobile-logo {
-    height: 200px;
-    width: 200px;
-}
-
-.logo-background {
-    margin: 1em 0 0 0;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(var(--gray) 0%, var(--gray) 25%, var(--white) 25%, var(--white) 75%, var(--gray) 75%, var(--gray) 100%);
-}
-
-.circle-btn {
-    justify-content: end;
-}
-
-.sm-circle-pos {
-    margin-bottom: 2em;
-}
-
-.icon {
-    height: 18px;
-    width: 18px;
-}
-
-a{
-    color: black;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Anton', sans-serif;
 }
@@ -90,8 +56,49 @@ h6 {
     font-size: 20px;
 }
 
-
 p {
+    font-family: 'Abel', sans-serif;
+}
+
+a {
+    color: black;
+}
+
+#mobile-logo {
+    height: 200px;
+    width: 200px;
+}
+
+#small-logo {
+    height: 105px;
+    width: 105px;
+}
+
+#medium-up-logo {
+    height: 105px;
+    width: 105px;
+    margin-left: 1em;
+}
+
+.logo-background {
+    margin: 1em 0 0 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(var(--gray) 0%, var(--gray) 25%, var(--white) 25%, var(--white) 75%, var(--gray) 75%, var(--gray) 100%);
+}
+
+.codeup-design-mobile {
+    font-size:50px;
+    font-family: 'Abel', sans-serif;
+}
+
+.codeup-design-small {
+    font-size:35px;
+    font-family: 'Abel', sans-serif;
+}
+
+.codeup-design-medium {
+    font-size:30px;
     font-family: 'Abel', sans-serif;
 }
 
@@ -102,19 +109,20 @@ p {
     color: white;
 }
 
-.btn-circle.btn-sm {
+.sm-circle-pos {
+    margin-bottom: 2em;
+}
+
+.btn-sm {
     width: 18px;
     height: 18px;
+    margin-top: .5em;
+    margin-right: .5em;
     padding: 6px 0;
     border-radius: 15px;
     font-size: 8px;
     text-align: center;
     line-height: 50%;
-}
-
-.codeup-design-mobile {
-    font-size:50px;
-    font-family: 'Abel', sans-serif;
 }
 
 .custom {
@@ -123,7 +131,6 @@ p {
     background: var(--gray);
     border: none;
 }
-
 
 .last-tweet {
     font-size: 28px;
