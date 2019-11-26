@@ -1,2 +1,5 @@
 Open JavaScript console in browser.
 Command + Option + J(Chrome) or K(Firefox)
+
+console.log()
+.log + tab
