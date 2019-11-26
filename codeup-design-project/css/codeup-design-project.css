@@ -48,7 +48,6 @@ h4 {
 }
 
 h5 {
-    margin-top: 1.5em;
     font-size: 28px;
 }
 
@@ -102,13 +101,6 @@ a {
     font-family: 'Abel', sans-serif;
 }
 
-.header-circles {
-    height: 130px;
-    width: 130px;
-    border: 5px solid white;
-    color: white;
-}
-
 .mobile-header-circles {
     height: 175px;
     width: 175px;
@@ -116,9 +108,21 @@ a {
     color: white;
 }
 
+.header-circles {
+    height: 130px;
+    width: 130px;
+    border: 5px solid white;
+    color: white;
+}
+
 .mobile-h5 {
     margin-top: 1.75em;
     font-size: 36px;
+}
+
+.small-up-h5 {
+    margin-top: 1.5em;
+    font-size: 28px;
 }
 
 .sm-circle-pos {
