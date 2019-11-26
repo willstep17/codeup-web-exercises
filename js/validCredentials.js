@@ -1,5 +1,5 @@
 //Data Types Exercise 4
-function validateCredentials(inputUsername, inputPassword) {
+function buildCredentialKey(inputUsername, inputPassword) {
     var credentialKey = [false, false, false, false];
     if(inputPassword.length > 5) {
         credentialKey[0] = true;
@@ -24,9 +24,9 @@ function validateCredentials(inputUsername, inputPassword) {
     return credentialKey;
 }
 
-function credentialLock(inputCredentials) {
-    for(var i = 0; i < inputCredentials.length; i++) {
-        if(inputCredentials[i] === false) {
+function credentialLock(credentialKey) {
+    for(var i = 0; i < credentialKey.length; i++) {
+        if(credentialKey[i] === false) {
             return "INVALID CREDENTIALS";
         }
     }
@@ -36,4 +36,4 @@ function credentialLock(inputCredentials) {
 var username = 'codeup';
 var password = 'notastrongpassword';
 
-console.log(credentialLock(validateCredentials(username, password)));
+console.log(credentialLock(buildCredentialKey(username, password)));
