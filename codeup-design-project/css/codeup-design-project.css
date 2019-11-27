@@ -52,7 +52,7 @@ h5 {
 }
 
 h6 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 p {
@@ -107,6 +107,10 @@ a {
     font-family: 'Abel', sans-serif;
 }
 
+.park-city {
+    margin-bottom: 1.5em;
+}
+
 .mobile-header-circles {
     height: 175px;
     width: 175px;
@@ -138,6 +142,10 @@ a {
 .subtitle {
     padding-left: .5em;
     padding-top: .2em;
+}
+
+.circle-btn {
+    padding-top: .175em;
 }
 
 .btn-sm {
