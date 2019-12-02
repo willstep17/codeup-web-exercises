@@ -8,3 +8,4 @@ console.log(greaterThanTen(10));
 console.log(greaterThanTen(-10));
 console.log(greaterThanTen(0));
 console.log(greaterThanTen(40));
+console.log(greaterThanTen(-200));
