@@ -14,7 +14,8 @@ function totalPrice(mer, bear, her, pricePerDay) {
     return ("Renting " + mer.name + " for " + mer.days + " day(s), " +
             bear.name + " for " + her.days + " day(s), " +
             " and " + her.name + " for " + her.days + " day(s) " +
-            "costs $" + ((mer.days + bear.days + her.days) * pricePerDay) + ".00.");
+            " at a daily rate of $" + pricePerDay + ".00 costs $" +
+            ((mer.days + bear.days + her.days) * pricePerDay) + ".00.");
 }
 
 var mermaid = {days: 3, name: "The Little Mermaid"};
