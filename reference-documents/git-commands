@@ -1,4 +1,4 @@
-Git Commands
+***** Git Commands *****
 
 Initialize a git repository in a directory:
 git init
@@ -15,3 +15,12 @@ git reset --hard origin/master
 Store the changes in a dirty working directory. Reverts the working directory to match the HEAD commit.
 git stash
 git stash list
+
+Create a new branch:
+git branch (branch-name)
+
+Switch to new branch:
+git checkout (branch-name)
+
+Create a new branch on GitHub:
+git push --set
