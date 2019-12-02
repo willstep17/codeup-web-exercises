@@ -6,3 +6,5 @@ function seeYouLater(animal) {
 console.log(seeYouLater("alligator"));
 console.log(seeYouLater("crocodile"));
 console.log(seeYouLater("wombat"));
+console.log(seeYouLater(0));
+console.log(seeYouLater(NaN));
