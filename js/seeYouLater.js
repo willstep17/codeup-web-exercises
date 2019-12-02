@@ -1,5 +1,5 @@
-function seeYouLater(animal) {
-    return (animal === "alligator") ? "See you later alligator!" : (animal === "crocodile") ?
+function seeYouLater(inputString) {
+    return (inputString === "alligator") ? "See you later alligator!" : (inputString === "crocodile") ?
     "After a while crocodile!" : "So long!";
 }
 
