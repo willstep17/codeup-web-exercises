@@ -109,6 +109,9 @@ function applyDiscount(price, discountPercentage) {
     return price * (1 - discountPercentage);
 }
 
+var inputPrice = Number(prompt("How much is the item before discount?"));
+var inputDiscountPercentage = Number(prompt("What is the discount percentage?"));
+
 console.log(applyDiscount(49.99, .1));
 
 })();
