@@ -36,4 +36,4 @@ function credentialLock(credentialKey) {
 var username = prompt("Enter a username: ");
 var password = prompt("Enter a password: ");
 
-alert(credentialLock(buildCredentialKey(username, password))); //VALID CREDENTIALS
+alert(credentialLock(buildCredentialKey(username, password)));
