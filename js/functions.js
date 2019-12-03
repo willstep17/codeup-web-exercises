@@ -97,7 +97,7 @@ console.log(calculateTip(0.15, 33.42)); //5.013
  * then display the dollar amount they should tip
  */
 
-var inputTipPercentage = Number(prompt("What percentage would you like to leave as a tip?"));
+var inputTipPercentage = Number(prompt("What percentage would you like to leave as a tip (0.00 - 1.00)?"));
 var inputBillTotal = Number(prompt("How large was your bill?"));
 alert("You should tip $" + calculateTip(inputTipPercentage, inputBillTotal) + ".");
 
@@ -111,7 +111,7 @@ alert("You should tip $" + calculateTip(inputTipPercentage, inputBillTotal) + ".
  * Example:
  * > var originalPrice = 100;
  * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
@@ -121,14 +121,13 @@ function applyDiscount(price, discountPercentage) {
 }
 
 var inputPrice = Number(prompt("How much is the item before discount?"));
-var inputDiscountPercentage = Number(prompt("What is the discount percentage?"));
+var inputDiscountPercentage = Number(prompt("What is the discount percentage (0.00 - 1.00)?"));
 
 console.log(applyDiscount(100, .2)); //80
 console.log(applyDiscount(45.99, 0.12)); //40.4712
 console.log(applyDiscount(49.99, .1)); //44.991
 console.log(applyDiscount(100, "banana")); //NaN
 alert("The price after discount is: $" + applyDiscount(inputPrice, inputDiscountPercentage) + "."); //Dynamic arguments.
-
 
 //END Immediately Invoked Function Expression
 })();
