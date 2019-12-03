@@ -1,4 +1,6 @@
 "use strict";
+
+//Immediately Invoked Function Expression
 (function(){
 
 /**
