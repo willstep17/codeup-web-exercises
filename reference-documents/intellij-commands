@@ -6,3 +6,6 @@ div.flex-item{Item $}*14 + tab
 
 Generate Lorem text.
 lorem15 + tab
+
+Multiple Select:
+Highlight what you want + control + g
