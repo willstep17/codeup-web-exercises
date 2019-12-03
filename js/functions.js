@@ -112,6 +112,7 @@ function applyDiscount(price, discountPercentage) {
 var inputPrice = Number(prompt("How much is the item before discount?"));
 var inputDiscountPercentage = Number(prompt("What is the discount percentage?"));
 
-console.log(applyDiscount(49.99, .1));
+console.log(applyDiscount(49.99, .1)); //Static arguments.
+alert("The price after discount is: " + applyDiscount(inputPrice, inputDiscountPercentage) + "."); //Dynamic arguments.
 
 })();
