@@ -30,3 +30,6 @@ git checkout -b (branch-name)
 
 Take everything from master branch and update another branch:
 git merge master
+
+Delete a local branch (must not be on that branch currently):
+git branch -d (branch-name)
