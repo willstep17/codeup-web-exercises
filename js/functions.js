@@ -16,6 +16,8 @@ function sayHello(name) {
     return "Hello, " + name + "!";
 }
 
+console.log(sayHello("CodeUp"));
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -59,11 +61,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(num) {
-    return (num === 2);
+var isTwo = function(num) {
+    return num === 2;
 }
 
-console.log(isTwo(random));
+console.log(isTwo(1)); //False
+console.log(isTwo(2)); //Boolean
+console.log(isTwo(3)); //False
+console.log(isTwo(random)); //Random
 
 /**
  * TODO:
@@ -80,6 +85,10 @@ console.log(isTwo(random));
 function calculateTip(tipPercentage, billTotal) {
     return tipPercentage * billTotal;
 }
+
+console.log(calculateTip(0.20, 20)); //4
+console.log(calculateTip(0.25, 25.50)); //6.375
+console.log(calculateTip(0.15, 33.42)); //5.013
 
 /**
  * TODO:
@@ -114,7 +123,12 @@ function applyDiscount(price, discountPercentage) {
 var inputPrice = Number(prompt("How much is the item before discount?"));
 var inputDiscountPercentage = Number(prompt("What is the discount percentage?"));
 
-console.log(applyDiscount(49.99, .1)); //Static arguments.
+console.log(applyDiscount(100, .2)); //80
+console.log(applyDiscount(45.99, 0.12)); //40.4712
+console.log(applyDiscount(49.99, .1)); //44.991
+console.log(applyDiscount(100, "banana")); //NaN
 alert("The price after discount is: $" + applyDiscount(inputPrice, inputDiscountPercentage) + "."); //Dynamic arguments.
 
+
+//END Immediately Invoked Function Expression
 })();

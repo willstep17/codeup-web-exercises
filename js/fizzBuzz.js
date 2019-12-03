@@ -4,21 +4,21 @@ function multipleOf(num, mod) {
 
 function fizzBuzz() {
     var output = "";
-    for (var i = 1; i <= 100; i++) {
+    for(var i=1;i<=100;i++) {
         switch(true) {
             case multipleOf(i, 15) :
-                output += "FizzBuzz, ";
+                output += "FizzBuzz \n";
                 break;
             case multipleOf(i, 3) :
-                output += "Fizz, ";
+                output += "Fizz \n";
                 break;
             case multipleOf(i, 5) :
-                output += "Buzz, ";
+                output += "Buzz \n";
                 break;
             default :
-                output += i + ", ";
+                output += i + " \n";
                 break;
-            }
+        }
     }
     return output;
 }
