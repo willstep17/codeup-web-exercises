@@ -18,23 +18,23 @@
  * Can you refactor your code to use functions?
  */
 
-var numberAnalysis = function(num) {
-    if (!isNaN(num)) {
-        var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
-        var positiveOrNegative = (num > 0) ? "positive" : "negative";
-        alert("The number is " + evenOrOdd + ".");
-        alert("The number plus 100 is " + (num + 100) + ".");
-        alert("The number is " + positiveOrNegative + ".");
-    } else {
-        alert("Please enter a number instead.");
-    }
-}
-
-var confirmation = confirm("Would you like to enter a number?");
-if (confirmation === true) {
-    var inputNumber = Number(prompt("Enter number: "));
-    numberAnalysis(inputNumber);
-}
+// var numberAnalysis = function(num) {
+//     if (!isNaN(num)) {
+//         var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
+//         var positiveOrNegative = (num >= 0) ? "positive" : "negative";
+//         alert("The number is " + evenOrOdd + ".");
+//         alert("The number plus 100 is " + (num + 100) + ".");
+//         alert("The number is " + positiveOrNegative + ".");
+//     } else {
+//         alert("Please enter a number instead.");
+//     }
+// }
+//
+// var confirmation = confirm("Would you like to enter a number?");
+// if (confirmation === true) {
+//     var inputNumber = Number(prompt("Enter number: "));
+//     numberAnalysis(inputNumber);
+// }
 
     /* ########################################################################## */
 
@@ -56,6 +56,25 @@ if (confirmation === true) {
  * console.logging the function's return value
  */
 
+// var analyzeColor = function(color) {
+//     var returnValue;
+//     if (color === "blue") {
+//         returnValue = "blue is the color of the sky";
+//     } else if (color === "red") {
+//         returnValue = "Strawberries are red";
+//     } else if (color === "cyan") {
+//         returnValue = "I don't know anything about cyan";
+//     } else {
+//         returnValue = "Please enter a valid color";
+//     }
+//     return returnValue;
+// }
+//
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("cyan"));
+// console.log(analyzeColor("dog"));
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -69,10 +88,33 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+// console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+// var analyzeColor = function(color) {
+//     var returnValue;
+//     switch(color) {
+//         case "blue" :
+//             returnValue = "blue is the color of the sky";
+//             break;
+//         case "red" :
+//             returnValue = "Strawberries are red";
+//             break;
+//         case "cyan" :
+//             returnValue = "Please enter a valid color.";
+//             break;
+//         default :
+//             returnValue = "Please enter a valid color";
+//             break;
+//     }
+//     return returnValue;
+// }
+//
+// console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -80,6 +122,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+// var userColor = prompt("Please enter a color.");
+// alert(analyzeColor(userColor));
 
 /* ########################################################################## */
 
@@ -103,6 +148,45 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+var calculateTotal = function(luckyNumber, amount) {
+    var finalValue = amount;
+    var discount;
+    switch(luckyNumber) {
+        case 1 :
+            discount = "10%";
+            finalValue *= .9;
+            break;
+        case 2 :
+            discount = "25%";
+            finalValue *= .75;
+            break;
+        case 3 :
+            discount = "35%";
+            finalValue *= .65;
+            break;
+        case 4 :
+            discount = "50%";
+            finalValue *= .5;
+            break;
+        case 5 :
+            discount = "100%";
+            finalValue = 0;
+            break;
+        default:
+            discount = "0%";
+            break;
+    }
+    alert("Your lucky number was " + luckyNumber + " and your discount is "
+          + discount + ", giving you a final total of $" + finalValue + ".");
+    return finalValue;
+}
+
+// console.log("STATIC VARIABLES:");
+// console.log(calculateTotal(0, 5000)); //5000
+// console.log(calculateTotal(5, 50000000)); //0
+// console.log(calculateTotal(2, 5000)); //3750
+// console.log(calculateTotal(3, 5)); //3.25
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -111,6 +195,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+
+console.log("RANDOM VARIABLES: ");
+console.log(calculateTotal(luckyNumber, 5000));
 
 })();
