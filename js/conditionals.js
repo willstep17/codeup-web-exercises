@@ -1,5 +1,8 @@
 "use strict";
 
+//Immediately Invoked Function Expressions
+(function(){
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -16,7 +19,26 @@
  * Can you refactor your code to use functions?
  */
 
-/* ########################################################################## */
+var numberAnalysis = function(num) {
+    console.log(typeof num);
+    if (typeof num === "number") {
+        var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
+        var positiveOrNegative = (num > 0) ? "positive" : "negative";
+        alert("The number is " + evenOrOdd + ".");
+        alert("The number plus 100 is " + (num + 100) + ".");
+        alert("The number is " + positiveOrNegative + ".");
+    } else {
+        alert("Please enter a number instead.");
+    }
+}
+
+var confirmation = confirm("Would you like to enter a number?");
+if (confirmation === true) {
+    var inputNumber = Number(prompt("Enter number: "));
+    numberAnalysis(inputNumber);
+}
+
+    /* ########################################################################## */
 
 /**
  * TODO:
@@ -92,3 +114,5 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
+})();
