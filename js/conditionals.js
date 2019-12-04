@@ -1,7 +1,6 @@
-"use strict";
-
-//Immediately Invoked Function Expressions
+//Immediately Invoked Function Expression
 (function(){
+"use strict";
 
 /**
  * TODO:
@@ -20,8 +19,7 @@
  */
 
 var numberAnalysis = function(num) {
-    console.log(typeof num);
-    if (typeof num === "number") {
+    if (!isNaN(num)) {
         var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
         var positiveOrNegative = (num > 0) ? "positive" : "negative";
         alert("The number is " + evenOrOdd + ".");
