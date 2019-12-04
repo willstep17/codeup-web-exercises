@@ -360,13 +360,16 @@
 // var pizzaPreference = prompt("What kind of pizza do you like?");
 //
 // switch(pizzaPreference) {
-//     case "pineapple and hot sauce":
+//     case "pineapple and hot sauce" :
 //         alert("What a coincidence, that's my favorite!");
 //         break;
-//     case "cheese":
+//     case "cheese" :
 //         alert("Just plain cheese? Okay...");
 //         break;
-//     default:
+//     case "ham" :
+//         alert("Ham is nice and easy to spell.");
+//         break;
+//     default :
 //         alert(pizzaPreference + " isn't my favorite, but let's order some!");
 //         break;
 // }
@@ -374,64 +377,96 @@
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
-// var evaluateWeather = function(weather) {
-//     var returnWeather
-//     switch(weather) {
-//         case "rainy" :
-//             returnWeather = "It's raining!";
-//             break;
-//         case "sunny" :
-//             returnWeather = "It's sunny!";
-//             break;
-//         case "snow" :
-//             returnWeather = "It's cold!";
-//             break;
-//         default:
-//             returnWeather = "Have a nice day!";
-//             break;
-//     }
-//     return returnWeather;
-// }
-//
-// console.log(evaluateWeather("rainy"));
-// console.log(evaluateWeather("snow"));
-// console.log(evaluateWeather("taco"));
+var evaluateWeather = function(weather) {
+    var returnWeather;
+    switch(weather) {
+        case "rainy" :
+            returnWeather = "It's raining!";
+            break;
+        case "sunny" :
+            returnWeather = "It's sunny!";
+            break;
+        case "snow" :
+            returnWeather = "It's snowing!";
+            break;
+        default:
+            returnWeather = "Have a nice day!";
+            break;
+    }
+    return returnWeather;
+}
+
+console.log(evaluateWeather("rainy"));
+console.log(evaluateWeather("snow"));
+console.log(evaluateWeather("taco"));
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
-var trafficInstructions = function(lightColor) {
-    var instructions;
-    switch (lightColor) {
-        case "green" :
-            instructions = "Go";
-            break;
-        case "yellow" :
-            instructions = "You can make it!";
-            break;
-        case "red" :
-            instructions = "Stop";
-            break;
-        default :
-            instructions = "?!?!?PANIC?!?!?";
-            break;
-    }
-    return instructions;
-}
-
-console.log(trafficInstructions("green"));
-console.log(trafficInstructions("yellow"));
-console.log(trafficInstructions("magenta"));
+// var trafficInstructions = function(lightColor) {
+//     var instructions;
+//     switch (lightColor) {
+//         case "green" :
+//             instructions = "Go";
+//             break;
+//         case "yellow" :
+//             instructions = "You can make it!";
+//             break;
+//         case "red" :
+//             instructions = "Stop";
+//             break;
+//         default :
+//             instructions = "?!?!?PANIC?!?!?";
+//             break;
+//     }
+//     return instructions;
+// }
+//
+// console.log(trafficInstructions("green"));
+// console.log(trafficInstructions("yellow"));
+// console.log(trafficInstructions("magenta"));
 
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
 
-
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
-
+// var shopping = confirm("Has the shopping been done?");
+// if(shopping) {
+//     console.log("Child gets 10 dollars.");
+// } else {
+//     console.log("Child gets 5 dollars.");
+// }
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
 
+// function weatherAnalysis(weather) {
+//     var returnMessage;
+//     switch(weather) {
+//         case "sunny" :
+//             returnMessage = "It's nice and sunny outside.";
+//             break;
+//         case "rainy" :
+//             returnMessage = "It's raining.";
+//             break;
+//         case "snowing" :
+//             returnMessage = "It's snowing.";
+//             break;
+//         case "overcast" :
+//             returnMessage = "It's overcast.";
+//             break;
+//         default:
+//             returnMessage = "It's normal.";
+//             break;
+//     }
+//     return returnMessage;
+// }
+//
+// var weather = prompt("Select the weather type today: ");
+// console.log(weatherAnalysis(weather));
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
+//     var backgroundColor = prompt("What color background would you like?");
+//     var background = (backgroundColor === "white") ? "Toggle background to white" : "Toggle background to black";
+//     console.log(background);
 
+//END Immediately Invoked Function Expression
 })();
