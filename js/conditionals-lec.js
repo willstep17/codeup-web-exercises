@@ -360,13 +360,16 @@
 // var pizzaPreference = prompt("What kind of pizza do you like?");
 //
 // switch(pizzaPreference) {
-//     case "pineapple and hot sauce":
+//     case "pineapple and hot sauce" :
 //         alert("What a coincidence, that's my favorite!");
 //         break;
-//     case "cheese":
+//     case "cheese" :
 //         alert("Just plain cheese? Okay...");
 //         break;
-//     default:
+//     case "ham" :
+//         alert("Ham is nice and easy to spell.");
+//         break;
+//     default :
 //         alert(pizzaPreference + " isn't my favorite, but let's order some!");
 //         break;
 // }
@@ -374,28 +377,28 @@
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
-// var evaluateWeather = function(weather) {
-//     var returnWeather
-//     switch(weather) {
-//         case "rainy" :
-//             returnWeather = "It's raining!";
-//             break;
-//         case "sunny" :
-//             returnWeather = "It's sunny!";
-//             break;
-//         case "snow" :
-//             returnWeather = "It's cold!";
-//             break;
-//         default:
-//             returnWeather = "Have a nice day!";
-//             break;
-//     }
-//     return returnWeather;
-// }
-//
-// console.log(evaluateWeather("rainy"));
-// console.log(evaluateWeather("snow"));
-// console.log(evaluateWeather("taco"));
+var evaluateWeather = function(weather) {
+    var returnWeather
+    switch(weather) {
+        case "rainy" :
+            returnWeather = "It's raining!";
+            break;
+        case "sunny" :
+            returnWeather = "It's sunny!";
+            break;
+        case "snow" :
+            returnWeather = "It's snowing!";
+            break;
+        default:
+            returnWeather = "Have a nice day!";
+            break;
+    }
+    return returnWeather;
+}
+
+console.log(evaluateWeather("rainy"));
+console.log(evaluateWeather("snow"));
+console.log(evaluateWeather("taco"));
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
