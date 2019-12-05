@@ -18,23 +18,24 @@
  * Can you refactor your code to use functions?
  */
 
-// var numberAnalysis = function(num) {
-//     if (!isNaN(num)) {
-//         var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
-//         var positiveOrNegative = (num >= 0) ? "positive" : "negative";
-//         alert("The number is " + evenOrOdd + ".");
-//         alert("The number plus 100 is " + (num + 100) + ".");
-//         alert("The number is " + positiveOrNegative + ".");
-//     } else {
-//         alert("Please enter a number instead.");
-//     }
-// }
-//
-// var confirmation = confirm("Would you like to enter a number?");
-// if (confirmation === true) {
-//     var inputNumber = Number(prompt("Enter number: "));
-//     numberAnalysis(inputNumber);
-// }
+var numberAnalysis = function(num) {
+    if (!isNaN(num)) {
+        var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
+        var positiveOrNegative = (num >= 0) ? "positive" : "negative";
+        alert("The number is " + evenOrOdd + ".");
+        alert("The number plus 100 is " + (num + 100) + ".");
+        alert("The number is " + positiveOrNegative + ".");
+    } else {
+        
+        alert("Please enter a number instead.");
+    }
+}
+
+var confirmation = confirm("Would you like to enter a number?");
+if (confirmation === true) {
+    var inputNumber = Number(prompt("Enter number: "));
+    numberAnalysis(inputNumber);
+}
 
     /* ########################################################################## */
 
