@@ -5,6 +5,3 @@ function outerFunction(callBackFunction) {
 outerFunction(function () {
     alert("It works!");
 });
-
-
-
