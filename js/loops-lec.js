@@ -1,4 +1,6 @@
+(function(){
 "use strict";
+
 /*********************************************
 *                   WHILE LOOPS
  *********************************************/
@@ -10,21 +12,43 @@
 //TODO TOGETHER: Create a while loop that counts up to 10 (non-inclusive) by 1
 // (0, 1, 2...9)
 
+// var a = 0;
+// while (a < 10) {
+//     console.log(a);
+//     a++;
+// }
+
+
+
+
 
 
 //TODO TOGETHER: Create a while loop that counts down from 20 to 0 (inclusive) by 1
 // (20, 19, 18...0)
+
+// var b = 20;
+// while (b >= 0) {
+//     console.log(b);
+//     b--;
+// }
 
 
 
 //TODO TOGETHER: Create a while loop that counts up to 20 (inclusive) by 2s (0, 2, 4...)
 // (0, 2, 4...20)
 
-
+// var c = 0;
+// while (c <= 20) {
+//     console.log(c);
+//     c+=2;
+// }
 
 //TODO TOGETHER: Create a while loop that asks the user to confirm: "Would you like to exit?"
 
-
+var exit = false;
+while (exit === false) {
+    exit = confirm("Would you like to exit?");
+}
 
 //TODO: Create a while loop that counts to 100 (inclusive) in increments of ten:
 // (10...20...30...)
@@ -140,3 +164,5 @@
 //
 // 	console.log('Here is a lovely even number: ' + i);
 // }
+
+})();
