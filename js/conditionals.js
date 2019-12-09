@@ -57,23 +57,23 @@ if (confirmation === true) {
  * console.logging the function's return value
  */
 
-// var analyzeColor = function(color) {
-//     var returnValue;
-//     if (color === "blue") {
-//         returnValue = "blue is the color of the sky";
-//     } else if (color === "red") {
-//         returnValue = "Strawberries are red";
-//     } else if (color === "cyan") {
-//         returnValue = "I don't know anything about cyan";
-//     } else {
-//         returnValue = "Please enter a valid color";
-//     }
-//     return returnValue;
-// }
-//
-// console.log(analyzeColor("blue"));
-// console.log(analyzeColor("cyan"));
-// console.log(analyzeColor("dog"));
+var analyzeColor = function(color) {
+    var returnValue;
+    if (color === "blue") {
+        returnValue = "blue is the color of the sky";
+    } else if (color === "red") {
+        returnValue = "Strawberries are red";
+    } else if (color === "cyan") {
+        returnValue = "I don't know anything about cyan";
+    } else {
+        returnValue = "Please enter a valid color";
+    }
+    return returnValue;
+}
+
+console.log(analyzeColor("blue"));
+console.log(analyzeColor("cyan"));
+console.log(analyzeColor("dog"));
 
 
 // Don't change the next two lines!
@@ -96,26 +96,26 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Refactor your above function to use a switch-case statement
  */
 
-// var analyzeColor = function(color) {
-//     var returnValue;
-//     switch(color) {
-//         case "blue" :
-//             returnValue = "blue is the color of the sky";
-//             break;
-//         case "red" :
-//             returnValue = "Strawberries are red";
-//             break;
-//         case "cyan" :
-//             returnValue = "Please enter a valid color.";
-//             break;
-//         default :
-//             returnValue = "Please enter a valid color";
-//             break;
-//     }
-//     return returnValue;
-// }
-//
-// console.log(analyzeColor(randomColor));
+var analyzeColor = function(color) {
+    var returnValue;
+    switch(color) {
+        case "blue" :
+            returnValue = "blue is the color of the sky";
+            break;
+        case "red" :
+            returnValue = "Strawberries are red";
+            break;
+        case "cyan" :
+            returnValue = "Please enter a valid color.";
+            break;
+        default :
+            returnValue = "Please enter a valid color";
+            break;
+    }
+    return returnValue;
+}
+
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
