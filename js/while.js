@@ -11,15 +11,19 @@ while(x <= 65536) {
 var allCones = Math.floor(Math.random() * 50) + 50;
 
 while(allCones > 0) {
+    console.log(allCones + " cones left to sell");
     var conesThisCustomer = Math.floor(Math.random() * 5) + 1;
-    console.log(allCones + " cones left to sell.");
-    if (conesThisCustomer === allCones) {
-        console.log(conesThisCustomer + " cones sold. I sold all of my cones!")
-    } else if (conesThisCustomer > allCones) {
-        console.log("Cannot sell you " + conesThisCustomer + " cones. I only have " + allCones);
-    } else {
-        console.log(conesThisCustomer + " cones sold...");
+    if (conesThisCustomer > allCones) {
+        console.log("Cannot sell you " + conesThisCustomer + " cones I only have " + allCones + "...");
+        allCones = 0;
+        console.log("Yay! I sold them all!");
+    } else if (conesThisCustomer === allCones) {
         allCones -= conesThisCustomer;
+        console.log(conesThisCustomer + " cones sold...");
+        console.log("Yay! I sold them all!");
+    } else {
+        allCones -= conesThisCustomer;
+        console.log(conesThisCustomer + " cones sold...");
     }
 }
 
