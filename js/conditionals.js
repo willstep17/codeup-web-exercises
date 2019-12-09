@@ -18,24 +18,24 @@
  * Can you refactor your code to use functions?
  */
 
-var numberAnalysis = function(num) {
-    if (!isNaN(num)) {
-        var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
-        var positiveOrNegative = (num >= 0) ? "positive" : "negative";
-        alert("The number is " + evenOrOdd + ".");
-        alert("The number plus 100 is " + (num + 100) + ".");
-        alert("The number is " + positiveOrNegative + ".");
-    } else {
-        
-        alert("Please enter a number instead.");
-    }
-}
-
-var confirmation = confirm("Would you like to enter a number?");
-if (confirmation === true) {
-    var inputNumber = Number(prompt("Enter number: "));
-    numberAnalysis(inputNumber);
-}
+// var numberAnalysis = function(num) {
+//     if (!isNaN(num)) {
+//         var evenOrOdd = (num % 2 === 0) ? "even" : "odd";
+//         var positiveOrNegative = (num >= 0) ? "positive" : "negative";
+//         alert("The number is " + evenOrOdd + ".");
+//         alert("The number plus 100 is " + (num + 100) + ".");
+//         alert("The number is " + positiveOrNegative + ".");
+//     } else {
+//
+//         alert("Please enter a number instead.");
+//     }
+// }
+//
+// var confirmation = confirm("Would you like to enter a number?");
+// if (confirmation === true) {
+//     var inputNumber = Number(prompt("Enter number: "));
+//     numberAnalysis(inputNumber);
+// }
 
     /* ########################################################################## */
 
@@ -57,23 +57,23 @@ if (confirmation === true) {
  * console.logging the function's return value
  */
 
-var analyzeColor = function(color) {
-    var returnValue;
-    if (color === "blue") {
-        returnValue = "blue is the color of the sky";
-    } else if (color === "red") {
-        returnValue = "Strawberries are red";
-    } else if (color === "cyan") {
-        returnValue = "I don't know anything about cyan";
-    } else {
-        returnValue = "Please enter a valid color";
-    }
-    return returnValue;
-}
-
-console.log(analyzeColor("blue"));
-console.log(analyzeColor("cyan"));
-console.log(analyzeColor("dog"));
+// var analyzeColor = function(color) {
+//     var returnValue;
+//     if (color === "blue") {
+//         returnValue = "blue is the color of the sky";
+//     } else if (color === "red") {
+//         returnValue = "Strawberries are red";
+//     } else if (color === "cyan") {
+//         returnValue = "I don't know anything about cyan";
+//     } else {
+//         returnValue = "Please enter a valid color";
+//     }
+//     return returnValue;
+// }
+//
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("cyan"));
+// console.log(analyzeColor("dog"));
 
 
 // Don't change the next two lines!
