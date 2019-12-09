@@ -32,12 +32,12 @@
 //
 // printNumberOfNumber();
 
-function subtractFive() {
-    for(var m=100;m>=5;m-=5) {
-        console.log(m);
-    }
-}
-
-subtractFive();
+// function subtractFive() {
+//     for(var m=100;m>=5;m-=5) {
+//         console.log(m);
+//     }
+// }
+//
+// subtractFive();
 
 })();
