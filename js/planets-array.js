@@ -1,5 +1,5 @@
 (function(){
-    "use strict";
+"use strict";
 
     var planets = [
         'Mercury',
@@ -44,4 +44,5 @@
     console.log("Sorting the planets array.");
     planets.sort();
     console.log(planets);
+
 })();
