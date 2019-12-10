@@ -11,7 +11,7 @@
      * console.log planetsArray to check your work
      */
 
-    var planetsArray = planetsString.split("|");
+    planetsArray = planetsString.split("|");
     console.log(planetsArray);
 
     // console.log(planetsArray);
@@ -34,4 +34,5 @@
 
      var planetsStringUl = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
      console.log(planetsStringUl);
+
 })();

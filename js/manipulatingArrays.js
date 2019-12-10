@@ -41,15 +41,16 @@
 
 var paragraph = "The quick brown fox jumps over the lazy dog";
 console.log(paragraph);
-var words = paragraph.split(" ");
 
+//Splits the string into words, words into letters, letters[0] to uppercase, then rebuilds words, rebuilds string
+var words = paragraph.split(" ");
 for(var i=0;i<words.length;i++) {
     var letters = words[i].split("");
     letters[0] = letters[0].toUpperCase();
     words[i] = letters.join("");
 }
-
 paragraph = words.join(" ");
+
 console.log(paragraph);
 
 })();
