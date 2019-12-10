@@ -43,7 +43,7 @@ for(var i=0;i<names.length;i++) {
      * Refactor your above code to use a `forEach` loop
      */
 
-names.forEach(function(name, i, arr){
+names.forEach(function(name, i, arr) {
     console.log("names[" + i +  "]: " +  name);
 });
 
