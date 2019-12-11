@@ -35,4 +35,6 @@
      var planetsStringUl = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
      console.log(planetsStringUl);
 
+     document.getElementById("planets").innerHTML = planetsStringUl;
+
 })();
