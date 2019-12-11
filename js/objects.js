@@ -12,16 +12,16 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-// var person = {
-//     firstName: "Rick",
-//     lastName: "Sanchez",
-//     sayHello: function() {
-//         console.log("Hello from " + this.firstName + " " + this.lastName);
-//     }
-// };
-//
-// console.log(person.firstName);
-// console.log(person.lastName);
+var person = {
+    firstName: "Rick",
+    lastName: "Sanchez",
+    sayHello: function() {
+        console.log("Hello from " + this.firstName + " " + this.lastName);
+    }
+};
+
+console.log(person.firstName);
+console.log(person.lastName);
 
     /**
      * TODO:
@@ -49,22 +49,22 @@
      * and console.log the relevant messages for each person
      */
 
-// var shoppers = [
-//     {name: 'Cameron', amount: 180},
-//     {name: 'Ryan', amount: 250},
-//     {name: 'George', amount: 320}
-// ];
-//
-// shoppers.forEach(function(shopper) {
-//     if(shopper.amount > 200) {
-//         var priceAfterDiscount = shopper.amount * .88;
-//         console.log(shopper.name + " spent $" + shopper.amount + ", which was enough to qualify for a 12% discount. " +
-//             "Price after discount: $" + priceAfterDiscount + ".");
-//     } else {
-//         console.log(shopper.name + " spent $" + shopper.amount + ", which was not enough to qualify for a 12% discount. " +
-//             "Final price: $" + shopper.amount + ".");
-//     }
-// });
+var shoppers = [
+    {name: 'Cameron', amount: 180},
+    {name: 'Ryan', amount: 250},
+    {name: 'George', amount: 320}
+];
+
+shoppers.forEach(function(shopper) {
+    if(shopper.amount > 200) {
+        var priceAfterDiscount = shopper.amount * .88;
+        console.log(shopper.name + " spent $" + shopper.amount + ", which was enough to qualify for a 12% discount. " +
+            "Price after discount: $" + priceAfterDiscount + ".");
+    } else {
+        console.log(shopper.name + " spent $" + shopper.amount + ", which was not enough to qualify for a 12% discount. " +
+            "Final price: $" + shopper.amount + ".");
+    }
+});
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -80,46 +80,12 @@
      */
 
 var books = [
-    {
-        title: "The Salmon of Doubt",
-        year: 2002,
-        author: {
-            firstName: "Douglas",
-            lastName: "Adams"
-        }
-    },
-    {
-        title: "Seveneves",
-        year: 2015,
-        author: {
-            firstName: "Neal",
-            lastName: "Stephenson"
-        }
-    },
-    {
-        title: "Cryptonomicon",
-        year: 1999,
-        author: {
-            firstName: "Neal",
-            lastName: "Stephenson"
-        }
-    },
-    {
-        title: "The Blade Itself",
-        year: 2006,
-        author: {
-            firstName: "Joe",
-            lastName: "Abercrombie"
-        }
-    },
-    {
-        title: "The Unholy Consult",
-        year: 2017,
-        author: {
-            firstName: "R. Scott",
-            lastName: "Bakker"
-        }
-    }
+    createBook("The Salmon of Doubt", "Douglas Adams", 2002),
+    createBook("Seveneves", "Neal Stephenson", 2015),
+    createBook("Cryptonomicon", "Neal Stephenson", 1999),
+    createBook("The Blade Itself", "Joe Abercrombie", 2006),
+    createBook("The Unholy Consult", "Scott Bakker", 2017),
+    createBook("A Storm of Swords", "George Martin", 2000)
 ];
 
 // console.log(books[0].title);
@@ -153,11 +119,7 @@ var books = [
      */
 
 books.forEach(function(book, i){
-   console.log("Book # " + (i + 1));
-   console.log("Title: " + book.title);
-   console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-   console.log("Year: " + book.year);
-   console.log("---");
+    showBookInfo(book, i);
 });
 
     /**
@@ -170,5 +132,25 @@ books.forEach(function(book, i){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+function createBook(inputTitle, inputAuthorName, inputYear) {
+    var parseAuthorName = inputAuthorName.split(" ");
+    var book = {
+        title: inputTitle,
+        year: inputYear,
+        author: {
+            firstName: parseAuthorName[0],
+            lastName: parseAuthorName[1]
+        }
+    }
+    return book;
+}
+
+function showBookInfo(book, i) {
+    console.log("Book # " + (i + 1));
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    console.log("Year: " + book.year);
+    console.log("---");
+}
 
 })();
