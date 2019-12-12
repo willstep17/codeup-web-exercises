@@ -17,7 +17,7 @@
 
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
-            var result = doRounding ? Math.ceil(this.getArea()) : this.getArea();
+            var result = doRounding ? Math.round(this.getArea()) : this.getArea();
 
             console.log("Area of a circle with radius: " + this.radius + ", is: " + result);
         }
