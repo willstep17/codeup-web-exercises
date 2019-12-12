@@ -79,14 +79,14 @@ shoppers.forEach(function(shopper) {
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-// var books = [
-//     createBook("The Salmon of Doubt", "Douglas Adams", 2002),
-//     createBook("Seveneves", "Neal Stephenson", 2015),
-//     createBook("Cryptonomicon", "Neal Stephenson", 1999),
-//     createBook("The Blade Itself", "Joe Abercrombie", 2006),
-//     createBook("The Unholy Consult", "Scott Bakker", 2017),
-//     createBook("A Storm of Swords", "George Martin", 2000)
-// ];
+var books = [
+    createBook("The Salmon of Doubt", "Douglas Adams", 2002),
+    createBook("Seveneves", "Neal Stephenson", 2015),
+    createBook("Cryptonomicon", "Neal Stephenson", 1999),
+    createBook("The Blade Itself", "Joe Abercrombie", 2006),
+    createBook("The Unholy Consult", "Scott Bakker", 2017),
+    createBook("A Storm of Swords", "George Martin", 2000)
+];
 
 // console.log(books[0].title);
 // console.log(books[2].author.lastName);
@@ -118,9 +118,9 @@ shoppers.forEach(function(shopper) {
      *      ...
      */
 
-// books.forEach(function(book, i){
-//     showBookInfo(book, i);
-// });
+books.forEach(function(book, i){
+    showBookInfo(book, i);
+});
 
     /**
      * Bonus:
@@ -133,25 +133,25 @@ shoppers.forEach(function(shopper) {
      *   `showBookInfo` function.
      */
 
-// function createBook(inputTitle, inputAuthorName, inputYear) {
-//     var parseAuthorName = inputAuthorName.split(" ");
-//     var book = {
-//         title: inputTitle,
-//         year: inputYear,
-//         author: {
-//             firstName: parseAuthorName[0],
-//             lastName: parseAuthorName[1]
-//         }
-//     }
-//     return book;
-// }
-//
-// function showBookInfo(book, i) {
-//     console.log("Book # " + (i + 1));
-//     console.log("Title: " + book.title);
-//     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-//     console.log("Year: " + book.year);
-//     console.log("---");
-// }
+function createBook(inputTitle, inputAuthorName, inputYear) {
+    var parseAuthorName = inputAuthorName.split(" ");
+    var book = {
+        title: inputTitle,
+        year: inputYear,
+        author: {
+            firstName: parseAuthorName[0],
+            lastName: parseAuthorName[1]
+        }
+    }
+    return book;
+}
+
+function showBookInfo(book, i) {
+    console.log("Book # " + (i + 1));
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    console.log("Year: " + book.year);
+    console.log("---");
+}
 
 })();
