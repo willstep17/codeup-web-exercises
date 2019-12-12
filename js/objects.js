@@ -142,7 +142,7 @@ function createBook(inputTitle, inputAuthorName, inputYear) {
             firstName: parseAuthorName[0],
             lastName: parseAuthorName[1]
         }
-    }
+    };
     return book;
 }
 
