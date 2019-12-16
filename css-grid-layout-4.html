@@ -10,15 +10,31 @@
 </head>
 <body>
     <div class="wrapper">
-        <section id="one"><h2>1</h2></section>
+        <section id="one" class="odd"><h2>1</h2></section>
         <section id="two"><h2>2</h2></section>
-        <section id="three"><h2>3</h2></section>
+        <section id="three" class="odd"><h2>3</h2></section>
         <section id="four"><h2>4</h2></section>
-        <section id="five"><h2>5</h2></section>
+        <section id="five" class="odd"><h2>5</h2></section>
         <section id="six"><h2>6</h2></section>
-        <section id="seven"><h2>7</h2></section>
+        <section id="seven" class="odd"><h2>7</h2></section>
         <section id="eight"><h2>8</h2></section>
-        <section id="nine"><h2>9</h2></section>
+        <section id="nine" class="odd"><h2>9</h2></section>
     </div>
+    <script>
+        var thirdSection = document.getElementById("three");
+        console.log(thirdSection);
+
+        var odds = document.getElementsByClassName("odd");
+        console.log("------Odds-------");
+        for(var i=0;i<odds.length;i++) {
+            console.log(odds[i]);
+        }
+
+        var areaTags = document.getElementsByTagName("h2");
+        console.log("------h2------");
+        for(var i=0;i<areaTags.length;i++) {
+            console.log(areaTags[i]);
+        }
+    </script>
 </body>
 </html>

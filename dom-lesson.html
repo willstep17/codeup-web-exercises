@@ -10,17 +10,35 @@
 <body>
     <h1 id="header">Happy Holidays!</h1>
     <h3>Wish List</h3>
-    <ul>
-        <li>Great Career</li>
-        <li class="even">Two Front Teeth</li>
-        <li>Oculus Quest</li>
-        <li class="even">Nintendo Switch</li>
-        <li>Macbook Pro 16-Inch</li>
-        <li class="even">Valve Index</li>
-    </ul>
+    <ul id="wishlist"></ul>
     <script>
-        console.log(document);
-        var header = document.getElementById("header");
+        // console.log(document);
+        // var header = document.getElementById("header");
+        // console.log(header);
+        //
+        // var evens = document.getElementsByClassName("even");
+        // // console.log(evens);
+        // for(var i=0;i<evens.length;i++) {
+        //     console.log(evens[i].innerHTML);
+        //     evens[i].innerHTML = "<em>Money</em>"; //HTML active
+        // }
+        //
+        // evens[1].innerText = "<em>Money</em>"; //HTML not active
+        //
+        // var lis = document.getElementsByTagName("li");
+        // // console.log(lis);
+        // // for(var i=0;i<lis.length;i++) {
+        // //     console.log(lis[i]);
+        // // }
+
+        var wishList = document.getElementById("wishlist");
+        var thingsIWant = ["Great Career", "Oculus Quest", "Nintendo Switch", "Two Front Teeth", "Macbook Pro 16-Inch", "Valve Index"];
+        var htmlString = "";
+        for(var i=0;i<thingsIWant.length;i++) {
+            htmlString += "<li>" + thingsIWant[i] + "</li>";
+        }
+
+        wishList.innerHTML = htmlString;
     </script>
 </body>
 </html>
