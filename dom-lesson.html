@@ -20,19 +20,7 @@
     <h3>Wish List</h3>
     <ul id="wishlist"></ul>
 
-    <form name="login">
-        <div>
-            <label for="username">Username: </label>
-            <input id="username" name="username" type="text">
-        </div>
-        <div>
-            <label for="password">Password: </label>
-            <input id="password" name="password" type="password">
-        </div>
-        <div>
-            <input type="submit">
-        </div>
-    </form>
+    <button id="button">Click Me!</button>
 
     <script>
         // console.log(document);
@@ -63,8 +51,10 @@
 
         wishList.innerHTML = htmlString;
 
-        var usernameInput = document.forms.login.username;
-        console.log(usernameInput.value);
+        var button = document.getElementById("button");
+        button.addEventListener("click", function(){
+            alert("You clicked?")
+        });
 
     </script>
 </body>
