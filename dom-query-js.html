@@ -8,6 +8,9 @@
     .blueText {
         color: blue;
     }
+    .greyText {
+        color: grey;
+    }
 </style>
 <body>
 
@@ -51,12 +54,13 @@
         // TODO: Set text color on every other list item to grey
         for(var i=0;i<listItems.length;i++) {
             if(i % 2 === 0) {
-                listItems[i].style.color = "grey";
+                listItems[i].setAttribute("class", "greyText");
             }
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
         for(var i=0;i<listItems.length;i++) {
+            // console.log("data-dbId: " + listItems[i].getAttribute("data-dbid"));
             if(listItems[i].getAttribute("data-dbid") === "1") {
                 listItems[i].setAttribute("class", "blueText");
             }
