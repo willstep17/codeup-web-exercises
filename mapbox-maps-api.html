@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 675px;
+        }
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #buttons {
+            display: flex;
+            flex-direction: row;
+        }
+        #enter-address {
+            display: flex;
+            flex-direction: row;
+        }
+        .medium-text {
+            font-size: 28px;
+            margin: .2em;
+        }
+        .girassol {
+            font-family: 'Girassol', cursive;
+        }
+        img {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="girassol">My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<div id="navbar">
+    <div id="buttons">
+        <button class="medium-text" id="set-zoom-10">Set Zoom 10</button>
+        <button class="medium-text" id="set-zoom-12">Set Zoom 12</button>
+        <button class="medium-text" id="set-zoom-13">Set Zoom 13</button>
+    </div>
+    <div id="enter-address">
+        <button class="medium-text" type="button" onclick="getInputValue();">Find Address!</button>
+        <input class="medium-text" type="text" placeholder="Enter Address" id="addressInput">
+    </div>
+</div>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox_api.js"></script>
+</body>
+</html>
