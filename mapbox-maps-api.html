@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>First Mapbox Map</title>
-    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inria+Serif|Roboto&display=swap" rel="stylesheet">
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Custom CSS -->
@@ -30,30 +30,43 @@
             font-size: 28px;
             margin: .2em;
         }
-        .girassol {
-            font-family: 'Girassol', cursive;
+        .inria {
+            font-family: 'Inria Serif', serif;
+        }
+        .roboto {
+            font-family: 'Roboto', sans-serif;
         }
         img {
             height: 150px;
+        }
+        #main-header {
+            margin-left: 4em;
+        }
+        h1 {
+            font-family: 'Inria Serif', serif;
+        }
+        button {
+            border: 2px solid black;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
-<h1 class="girassol">My First Mapbox Map!</h1>
+<h1 class="inria" id="main-header">My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
 <div id="navbar">
     <div id="buttons">
-        <button class="medium-text" id="set-zoom-10">Set Zoom 10</button>
-        <button class="medium-text" id="set-zoom-12">Set Zoom 12</button>
-        <button class="medium-text" id="set-zoom-13">Set Zoom 13</button>
+        <button class="medium-text roboto" id="set-zoom-10">Set Zoom 10</button>
+        <button class="medium-text roboto" id="set-zoom-12">Set Zoom 12</button>
+        <button class="medium-text roboto" id="set-zoom-13">Set Zoom 13</button>
     </div>
     <div id="enter-address">
-        <button class="medium-text" type="button" onclick="getInputValue();">Find Address!</button>
-        <input class="medium-text" type="text" placeholder="Enter Address" id="addressInput">
+        <button class="medium-text roboto" type="button" onclick="getInputValue();">Find Address!</button>
+        <input class="medium-text roboto" type="text" placeholder="Enter Address" id="addressInput">
     </div>
 </div>
 <!-- Mapbox JS -->
