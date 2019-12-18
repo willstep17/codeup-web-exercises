@@ -65,7 +65,8 @@ function markRestaurants(inputRestaurants) {
         };
 
         var popup = new mapboxgl.Popup()
-            .setHTML("<h1>" + restaurant.name + "</h1><h3>" + restaurant.info + "</h3><img src=\'" + restaurant.image + "\'></img>");
+            .setHTML("<h1>" + restaurant.name + "</h1><h3>" + restaurant.info +
+                "</h3><img src=\'" + restaurant.image + "\'></img>");
 
         var marker = new mapboxgl.Marker(markerOptions)
             .setLngLat([restaurant.coordinates.longitude, restaurant.coordinates.latitude])
@@ -108,10 +109,16 @@ addressButton.addEventListener("click", function(){
 });
 
 
-
+var toggle = false;
 var displayButton = document.getElementById("set-satellite");
 displayButton.addEventListener("click", function(){
-
+    if(toggle === false) {
+        map.setStyle("mapbox://styles/mapbox/satellite-v9");
+        toggle = true;
+    } else {
+        map.setStyle('mapbox://styles/mapbox/navigation-guidance-night-v4');
+        toggle = false;
+    }
 });
 
 // function getInputValue() {
