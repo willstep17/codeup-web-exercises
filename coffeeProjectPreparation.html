@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes for Coffee Project</title>
+</head>
+<body>
+    <h1>Merry Christmas!</h1>
+    <h3>Wish List</h3>
+
+
+    <script>
+        var gifts = ["plant", "necktie", "socks", "pony"];
+        var button = document.getElementById("button");
+        button.addEventListener("click", addGift);
+
+        function addGift() {
+            var gift = document.getElementById("gift").value;
+            gifts.push(gift);
+            renderWishList(); //Wipes out wish list, refills it with gifts array
+            document.getElementById("gift").value = "";
+        }
+
+        function renderWishlist() {
+            var giftsString = "";
+            gifts.forEach(function(gift){
+               giftsString += "<li>" + gift + "</li>";
+            });
+            document.getElementById("wishList").innerHTML = giftsString;
+        }
+
+        renderWishList();
+    </script>
+</body>
+</html>
