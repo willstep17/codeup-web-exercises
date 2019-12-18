@@ -37,7 +37,7 @@
             font-family: 'Roboto', sans-serif;
         }
         img {
-            height: 150px;
+            height: 175px;
         }
         #main-header {
             margin-left: 4em;
@@ -64,9 +64,12 @@
         <button class="medium-text roboto" id="set-zoom-12">Set Zoom 12</button>
         <button class="medium-text roboto" id="set-zoom-13">Set Zoom 13</button>
     </div>
+    <div id="satellite">
+        <button class="medium-text roboto" id="set-satellite">NSA MODE</button>
+    </div>
     <div id="enter-address">
-        <button class="medium-text roboto" type="button" onclick="getInputValue();">Find Address!</button>
-        <input class="medium-text roboto" type="text" placeholder="Enter Address" id="addressInput">
+        <button id="find-address-button" class="medium-text roboto" type="button">Find Address!</button>
+        <input id="addressInput" class="medium-text roboto" type="text" placeholder="Enter Address">
     </div>
 </div>
 <!-- Mapbox JS -->
