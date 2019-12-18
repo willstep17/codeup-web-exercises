@@ -45,6 +45,16 @@ var restaurants = [
             latitude: 29.643025
         }
     },
+    {
+        name: "Stone Werks",
+        info: "Steak and Wine",
+        markerColor: "purple",
+        image: "img/stonewerks.jpg",
+        coordinates: {
+            longitude: -98.51,
+            latitude: 29.61
+        }
+    },
 ];
 
 function markRestaurants(inputRestaurants) {
@@ -55,7 +65,7 @@ function markRestaurants(inputRestaurants) {
         };
 
         var popup = new mapboxgl.Popup()
-            .setHTML("<h1>" + restaurant.name + "</h1><h3>" + restaurant.info + "</h3><img src=" + restaurant.image + "></img>");
+            .setHTML("<h1>" + restaurant.name + "</h1><h3>" + restaurant.info + "</h3><img src=\'" + restaurant.image + "\'></img>");
 
         var marker = new mapboxgl.Marker(markerOptions)
             .setLngLat([restaurant.coordinates.longitude, restaurant.coordinates.latitude])
@@ -82,15 +92,37 @@ zoomThirteenButton.addEventListener("click", function(){
     map.setZoom(13);
 });
 
-function getInputValue() {
+var addressButton = document.getElementById("find-address-button");
+addressButton.addEventListener("click", function(){
     var address = document.getElementById("addressInput").value;
     geocode(address, mapboxToken).then(function(result){
         console.log(result);
         map.setCenter(result);
+        var markerOptions = {
+            color: "#8D021F"
+        };
+        var marker = new mapboxgl.Marker(markerOptions)
+            .setLngLat(result)
+            .addTo(map)
     });
-}
+});
 
-// geocode("1202 Evans Rd, San Antonio Tx, 78258", mapboxToken).then(function(result){
+
+
+var displayButton = document.getElementById("set-satellite");
+displayButton.addEventListener("click", function(){
+
+});
+
+// function getInputValue() {
+//     var address = document.getElementById("addressInput").value;
+//     geocode(address, mapboxToken).then(function(result){
+//         console.log(result);
+//         map.setCenter(result);
+//     });
+// }
+
+// geocode("Brickhouse, San Antonio Tx, 78258", mapboxToken).then(function(result){
 //     console.log(result);
 //     map.setCenter(result);
 // });
