@@ -65,8 +65,10 @@ function markRestaurants(inputRestaurants) {
         };
 
         var popup = new mapboxgl.Popup()
-            .setHTML("<h1>" + restaurant.name + "</h1><h3>" + restaurant.info +
-                "</h3><img src=\'" + restaurant.image + "\'></img>");
+            .setHTML(
+                "<h1>" + restaurant.name + "</h1>" +
+                "<h3>" + restaurant.info + "</h3>" +
+                "<img src='" + restaurant.image + "'></img>");
 
         var marker = new mapboxgl.Marker(markerOptions)
             .setLngLat([restaurant.coordinates.longitude, restaurant.coordinates.latitude])
@@ -107,7 +109,6 @@ addressButton.addEventListener("click", function(){
             .addTo(map)
     });
 });
-
 
 var toggle = false;
 var displayButton = document.getElementById("set-satellite");
