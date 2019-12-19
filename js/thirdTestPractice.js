@@ -46,39 +46,39 @@
 //     }
 // ]));
 
-function washCars(inputArray) {
-    inputArray.forEach(function(car){
-        car.isDirty = false;
-    });
-    return inputArray;
-}
-
-console.log(washCars(      [
-    {
-        make: 'Volvo',
-        color: 'red',
-        year: 1996,
-        isDirty: true
-    },
-    {
-        make: 'Kia',
-        color: 'blue',
-        year: 2014,
-        isDirty: true
-    },
-    {
-        make: 'Toyota',
-        color: 'black',
-        year: 2004,
-        isDirty: false
-    },
-    {
-        make: 'Ford',
-        color: 'white',
-        year: 2007,
-        isDirty: true
-    }
-]));
+// function washCars(inputArray) {
+//     inputArray.forEach(function(car){
+//         car.isDirty = false;
+//     });
+//     return inputArray;
+// }
+//
+// console.log(washCars(      [
+//     {
+//         make: 'Volvo',
+//         color: 'red',
+//         year: 1996,
+//         isDirty: true
+//     },
+//     {
+//         make: 'Kia',
+//         color: 'blue',
+//         year: 2014,
+//         isDirty: true
+//     },
+//     {
+//         make: 'Toyota',
+//         color: 'black',
+//         year: 2004,
+//         isDirty: false
+//     },
+//     {
+//         make: 'Ford',
+//         color: 'white',
+//         year: 2007,
+//         isDirty: true
+//     }
+// ]));
 
 // function adminList(admins) {
 //     var areAdmins = [];
@@ -105,8 +105,33 @@ console.log(washCars(      [
 //     }
 // ]));
 
-// function makeSandwichObjects(breads, fillings) {
-//     var sandwiches = [];
-// }
+function makeSandwichObjects(breads, fillings) {
+    var sandwiches = [];
+    for(var i=0; i<breads.length;i++) {
+        var sandwichObject = {
+            bread: breads[i],
+            filling: fillings[i],
+        }
+        sandwiches.push(sandwichObject);
+    }
+    return sandwiches;
+}
+
+var breadList = [
+    "white",
+    "wheat",
+    "rhy",
+    "white"
+];
+
+var fillingList = [
+    "tuna",
+    "ham",
+    "phillyCheese",
+    "doritos"
+];
+
+console.log(makeSandwichObjects(breadList, fillingList));
+
 
 })();
