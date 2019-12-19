@@ -7,5 +7,5 @@ console.log(seeYouLater("alligator"));
 console.log(seeYouLater("crocodile"));
 console.log(seeYouLater("wombat"));
 console.log(seeYouLater(0));
-console.log(seeYouLater(NaN);
+console.log(seeYouLater(NaN));
 console.log(seeYouLater("alli" + "gator"));
