@@ -21,58 +21,64 @@
 // filterNumbers(numbers);
 // filterNumbers(["fred", true, 5, 3]);
 
-var getOlder = function(inputDogs) {
-    inputDogs.forEach(function(dog){
-       dog.age++;
-    });
-    return inputDogs;
-};
-
-console.log(getOlder([
-    {
-        name: "Chompers",
-        breed: "Pug",
-        age: 7
-    },
-    {
-        name: "Freddy",
-        breed: "Lab",
-        age: 4
-    },
-    {
-        name: "Mr. Pig",
-        breed: "Mastif",
-        age: 10
-    }
-]));
-
-// function washCars(inputArray) {
-//     for(var i=0;i<inputArray.length;i++) {
-//         inputArray[i].isDirty = false;
-//     }
-//     return inputArray;
-// }
+// var getOlder = function(inputDogs) {
+//     inputDogs.forEach(function(dog){
+//        dog.age++;
+//     });
+//     return inputDogs;
+// };
 //
-// console.log(washCars(      [
+// console.log(getOlder([
 //     {
-//         make: 'Volvo',
-//         color: 'red',
-//         year: 1996,
-//         isDirty: true
+//         name: "Chompers",
+//         breed: "Pug",
+//         age: 7
 //     },
 //     {
-//         make: 'Toyota',
-//         color: 'black',
-//         year: 2004,
-//         isDirty: false
+//         name: "Freddy",
+//         breed: "Lab",
+//         age: 4
 //     },
 //     {
-//         make: 'Ford',
-//         color: 'white',
-//         year: 2007,
-//         isDirty: true
+//         name: "Mr. Pig",
+//         breed: "Mastif",
+//         age: 10
 //     }
 // ]));
+
+function washCars(inputArray) {
+    inputArray.forEach(function(car){
+        car.isDirty = false;
+    });
+    return inputArray;
+}
+
+console.log(washCars(      [
+    {
+        make: 'Volvo',
+        color: 'red',
+        year: 1996,
+        isDirty: true
+    },
+    {
+        make: 'Kia',
+        color: 'blue',
+        year: 2014,
+        isDirty: true
+    },
+    {
+        make: 'Toyota',
+        color: 'black',
+        year: 2004,
+        isDirty: false
+    },
+    {
+        make: 'Ford',
+        color: 'white',
+        year: 2007,
+        isDirty: true
+    }
+]));
 
 // function adminList(admins) {
 //     var areAdmins = [];
