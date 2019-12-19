@@ -23,7 +23,7 @@
 
 var getOlder = function(inputDogs) {
     inputDogs.forEach(function(dog){
-       dog.age++;
+       dog.age += 1;
     });
     return inputDogs;
 };
