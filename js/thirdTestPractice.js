@@ -99,8 +99,8 @@ filterNumbers(["fred", true, 5, 3]);
 //     }
 // ]));
 
-function makeSandwichObjects(breads, fillings) {
-    var sandwiches = [];
-}
+// function makeSandwichObjects(breads, fillings) {
+//     var sandwiches = [];
+// }
 
 })();
