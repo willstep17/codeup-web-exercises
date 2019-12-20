@@ -133,5 +133,27 @@
 //
 // console.log(makeSandwichObjects(breadList, fillingList));
 
+function convertNameToObject(inputName) {
+    var nameArr = inputName.split(' ');
+    var returnObject = { firstName: nameArr[0], lastName: nameArr[1]};
+    return returnObject;
+}
+
+function capitalizeName(inputName) {
+    var firstLast = convertNameToObject(inputName);
+    firstLast.firstName = firstLast.firstName[0].toUpperCase() + firstLast.firstName.substr(1).toLowerCase();
+    firstLast.lastName = firstLast.lastName[0].toUpperCase() + firstLast.lastName.substr(1).toLowerCase();
+    var returnString = "" + firstLast.firstName + " " + firstLast.lastName;
+    return returnString;
+}
+
+function capitalizeAllNames(inputArr) {
+    inputArr.forEach(function(name, i){
+        inputArr[i] = capitalizeName(name);
+    });
+    return inputArr;
+}
+
+console.log(capitalizeAllNames(["harry potter", "Dan barl", "ada lovelace", "charles babbage"]));
 
 })();
