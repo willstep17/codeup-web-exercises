@@ -105,33 +105,33 @@
 //     }
 // ]));
 
-function makeSandwichObjects(breads, fillings) {
-    var sandwiches = [];
-    for(var i=0; i<breads.length;i++) {
-        var sandwichObject = {
-            bread: breads[i],
-            filling: fillings[i],
-        }
-        sandwiches.push(sandwichObject);
-    }
-    return sandwiches;
-}
-
-var breadList = [
-    "white",
-    "wheat",
-    "rhy",
-    "white"
-];
-
-var fillingList = [
-    "tuna",
-    "ham",
-    "phillyCheese",
-    "doritos"
-];
-
-console.log(makeSandwichObjects(breadList, fillingList));
+// function makeSandwichObjects(breads, fillings) {
+//     var sandwiches = [];
+//     for(var i=0; i<breads.length;i++) {
+//         var sandwichObject = {
+//             bread: breads[i],
+//             filling: fillings[i],
+//         }
+//         sandwiches.push(sandwichObject);
+//     }
+//     return sandwiches;
+// }
+//
+// var breadList = [
+//     "white",
+//     "wheat",
+//     "rhy",
+//     "white"
+// ];
+//
+// var fillingList = [
+//     "tuna",
+//     "ham",
+//     "phillyCheese",
+//     "doritos"
+// ];
+//
+// console.log(makeSandwichObjects(breadList, fillingList));
 
 
 })();
