@@ -19,3 +19,19 @@ pets.forEach(function(pet, i) {
 
 // var numbers = [42, 53, 66, 783, 241];
 // console.log(numbers[2]);
+
+var suspects = ["Carl", "James", "Sam", "Heather", "Brian"];
+
+function objectifySuspects(inputArray) {
+    var suspectObjects = [];
+    inputArray.forEach(function(suspect){
+        var suspectObject = {
+            name: suspect,
+            age: Math.floor(Math.random() * 40 + 20)
+        };
+        suspectObjects.push(suspectObject);
+    });
+    return suspectObjects;
+}
+
+console.log(objectifySuspects(suspects));
