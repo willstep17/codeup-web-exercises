@@ -5,15 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JQuery Practice</title>
+    <title>JQuery Exercises</title>
 </head>
 <body>
+
+<button id="button">Click Me!</button>
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     (function(){
         "use strict";
         $(document).ready(function(){
             console.log("JQuery is loaded.");
+            console.log($); // $ is an alias for JQuery
+            console.log(jQuery);
+        });
+        document.getElementById("button").addEventListener("click", function(){
+           alert("You clicked a button with vanilla JS");
+        });
+        $("#button").click(function(){
+           alert("You clicked the butotn using JQuery");
         });
     })();
 </script>
