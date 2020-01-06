@@ -6,26 +6,61 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JQuery Exercises</title>
+    <style>
+        .teal {
+            color: teal;
+        }
+        .large-font {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
 
-<button id="button">Click Me!</button>
+<h1 id="main-header" class="codeup">JQuery Exercises</h1>
+<p id="lorem-font" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Delectus id officia temporibus? Ad aliquid asperiores aut,
+    commodi eligendi exercitationem ipsa magni,
+    inima non nulla, pariatur quaerat quis sed tenetur vero.</p>
+<ul id="list-container">
+    <li id="li-1" class="list-item codeup">CodeUp</li>
+    <li id="li-2" class="list-item">Home</li>
+    <li id="li-3" class="list-item">Baseball</li>
+    <li id="li-4" class="list-item codeup">Nuclear Bomb</li>
+    <li id="li-5" class="list-item">Kitten</li>
+</ul>
+<div id="the-div">
+    <p id="inner-div-text" class="text">Inner div text</p>
+</div>
+<button id="li-color-change">Change the li font size!</button>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     (function(){
         "use strict";
-        $(document).ready(function(){
+        $(document).ready(function() {
             console.log("JQuery is loaded.");
-            console.log($); // $ is an alias for JQuery
-            console.log(jQuery);
-        });
-        document.getElementById("button").addEventListener("click", function(){
-           alert("You clicked a button with vanilla JS");
-        });
-        $("#button").click(function(){
-           alert("You clicked the butotn using JQuery");
+
+            $("h1, p, li").addClass("teal");
+            $("p").removeClass("teal");
+
+            var contents = $("h1").html();
+            alert(contents);
+
+            var modulator = false;
+            $("#li-color-change").click(function(){
+                if (modulator === false) {
+                    $("li").addClass("large-font");
+                    modulator = true;
+                } else {
+                    $("li").removeClass("large-font");
+                    modulator = false;
+                }
+            });
+
         });
     })();
 </script>
+
 </body>
 </html>

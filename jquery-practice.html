@@ -30,24 +30,29 @@
 <script>
     (function(){
         "use strict";
+
         $(document).ready(function(){
             console.log("JQuery is loaded.");
             // console.log($); // $ is an alias for JQuery
             // console.log(jQuery);
-        });
+            // document.getElementById("button").addEventListener("click", function(){
+            //     alert("You clicked a button with vanilla JS");
+            // });
 
-        // document.getElementById("button").addEventListener("click", function(){
-        //     alert("You clicked a button with vanilla JS");
-        // });
+            $(".red-background").removeClass("red-background");
 
-        $(".red-background").removeClass("red-background");
-
-        $("#add-resolution").click(function(){
-            $(".list-container").append($('<li>', {
-                text: $('#resolution').val()
+            $("#add-resolution").click(function(){
+                $(".list-container").append($('<li>', {
+                    text: $('#resolution').val();
             }));
-        });
+            });
 
+            // $("#id"); //ID Selector
+            // $(".class"); //Class Selector
+            // $("element"); //Element Selector
+            var multiplePageItems = $(".list-item, #li-3, h1"); //Multiple Selectors
+            console.log(multiplePageItems);
+        });
 
     })();
 </script>
