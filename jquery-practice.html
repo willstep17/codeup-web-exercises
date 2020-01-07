@@ -64,9 +64,19 @@
             //     function(){ $('li').css("color", "black"); }
             // );
 
-            $("body").keydown(function(){
-                $("#feedback").html("A key was pressed");
+            // $("body").keydown(function(){
+            //     $("#feedback").append("<span> A keydown event occurred</span>");
+            // });
+
+            $("body").on("keyup", function(){
+                $("#feedback").append("<span> A keyup event occurred</span>");
+                $(this).off("keyup");
             });
+
+            $("#main-header").hover(
+                function(){ $(this).html("Secret Heading"); },
+                function(){ $(this).html("This is the Header").off(); }
+            );
         });
 
     })();
