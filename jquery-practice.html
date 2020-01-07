@@ -9,6 +9,9 @@
         .purple {
             background-color: purple;
         }
+        .important {
+            background-color: yellow;
+        }
     </style>
     <title>JQuery Practice</title>
 </head>
@@ -68,15 +71,24 @@
             //     $("#feedback").append("<span> A keydown event occurred</span>");
             // });
 
-            $("body").on("keyup", function(){
-                $("#feedback").append("<span> A keyup event occurred</span>");
-                $(this).off("keyup");
+            // $("body").on("keyup", function(){
+            //     $("#feedback").append("<span> A keyup event occurred</span>");
+            //     $(this).off("keyup");
+            // });
+            //
+            // $("#main-header").hover(
+            //     function(){ $(this).html("Secret Heading"); },
+            //     function(){ $(this).html("This is the Header").off(); }
+            // );
+
+            $("li").click(function(){
+                $(this).toggleClass('important');
             });
 
-            $("#main-header").hover(
-                function(){ $(this).html("Secret Heading"); },
-                function(){ $(this).html("This is the Header").off(); }
-            );
+            $("li").click(function(){
+                $(this).text($(this).text() + "0");
+            });
+
         });
 
     })();
