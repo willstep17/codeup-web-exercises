@@ -23,6 +23,8 @@
     <li id="li-4" class="list-item red-background">First a Fourth Thing</li>
 </ul>
 
+<p id="feedback"></p>
+
 <input id="resolution">
 <button id="add-resolution">Add a New Resolution</button>
 
@@ -61,6 +63,10 @@
             //     function(){ $('li').css("color", "red"); },
             //     function(){ $('li').css("color", "black"); }
             // );
+
+            $("body").keydown(function(){
+                $("#feedback").html("A key was pressed");
+            });
         });
 
     })();
