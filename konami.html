@@ -5,10 +5,13 @@
     <style>
         #wrapper {
             margin: 0 4em;
+            font-family: 'Raleway', sans-serif;
         }
         #main-header {
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
-            margin: 1em;
+            font-size: 60px;
+            font-weight: bold;
         }
         #entry-log {
             display: grid;
@@ -26,8 +29,19 @@
         #event-area {
             text-align: center;
         }
+        #heart-box {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+            text-align: center;
+        }
+        .heart {
+            height: 50px;
+            margin: .5em auto;
+        }
     </style>
     <script src="https://kit.fontawesome.com/6c58774688.js" crossorigin="anonymous" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="wrapper">
@@ -37,6 +51,7 @@
     </p>
     <div id="event-area"></div>
 </div>
+<audio id="sound-effect" src="audio/legend-of-zelda-orarina-of-time-opening-a-large-treasure-chest.mp3"></audio>
 
 <script
         src="https://code.jquery.com/jquery-3.4.1.js"
@@ -49,6 +64,7 @@
             console.log("JQuery is loaded.");
 
             let activeEntries = [];
+            var soundEffect = new Audio('audio/legend-of-zelda-orarina-of-time-opening-a-large-treasure-chest.mp3');
 
             $(document).keyup(function (event) {
                 $("#event-area").html("");
@@ -59,14 +75,25 @@
                 resetEntries(activeEntries.length);
             });
 
-            function checkKonami(entries) {
+            async function checkKonami(entries) {
                 let entriesString = activeEntries.join("");
                 console.log(entriesString);
                 if (entriesString.match(/3838404037393739666513/)) {
-                    $("#event-area").append("<h1>Konami Code Entered!</h1>" + "<p>You have added 30 lives!</p>");
+                    soundEffect.play();
                     activeEntries = [];
                     $("#entry-log").html("");
+                    $("#event-area").append("<h1>Konami Code Entered!</h1>" +
+                                            "<h3>You have added 30 lives!</h3>" +
+                                            "<div id='heart-box'></div>");
+                    for(let i=0;i<=29;i++) {
+                        await sleep(100);
+                        $("#heart-box").append("<img src='img/heart-pixel.png' class='heart'>")
+                    }
                 }
+            }
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms))
             }
 
             function updateEntryLog(entry) {
@@ -80,7 +107,7 @@
                 } else if(entry === "ArrowRight"){
                     finalEntry = "<span><i class='fas fa-arrow-circle-right fa-3x'></i></span>";
                 } else {
-                    finalEntry = "<span class='non-icon-entry'>" + entry + "</span>";
+                    finalEntry = "<span class='non-icon-entry'>" + entry.toUpperCase() + "</span>";
                 }
                 $("#entry-log").append(finalEntry);
             }
