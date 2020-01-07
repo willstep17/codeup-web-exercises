@@ -3,6 +3,9 @@
 <head>
     <title>Konami Code</title>
     <style>
+        body {
+            background-image: url('img/backgrounds/whiteMarble.png');
+        }
         #wrapper {
             margin: 0 4em;
             font-family: 'Raleway', sans-serif;
@@ -65,6 +68,7 @@
 
             let activeEntries = [];
             var soundEffect = new Audio('audio/legend-of-zelda-orarina-of-time-opening-a-large-treasure-chest.mp3');
+            let backgroundImage = $("body");
 
             $(document).keyup(function (event) {
                 $("#event-area").html("");
@@ -72,14 +76,13 @@
                 updateEntryLog(event.key);
                 // console.log(activeEntries);
                 checkKonami(activeEntries);
+                // checkFFVII(activeEntries);
                 resetEntries(activeEntries.length);
             });
 
             async function checkKonami(entries) {
                 let entriesString = activeEntries.join("");
-                console.log(entriesString);
                 if (entriesString.match(/3838404037393739666513/)) {
-                    soundEffect.play();
                     activeEntries = [];
                     $("#entry-log").html("");
                     $("#event-area").append("<h1>Konami Code Entered!</h1>" +
@@ -91,6 +94,16 @@
                     }
                 }
             }
+
+            // function checkFFVII(entries) {
+            //     let entriesString = activeEntries.join("");
+            //     if (entriesString.match(/707055/)) {
+            //         activeEntries = [];
+            //         $("#entry-log").html("");
+            //         $("#event-area").append("<h1>FFVII Code Entered</h1>");
+            //         backgroundImage.css("background-image", "url('img/backgrounds/sephiroth.gif')");
+            //     }
+            // }
 
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms))
