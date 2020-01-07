@@ -2,17 +2,98 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        #wrapper {
+            margin: 0 4em;
+        }
+        #main-header {
+            text-align: center;
+            margin: 1em;
+        }
+        #entry-log {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-gap: 10px;
+        }
+        span {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .non-icon-entry {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        #event-area {
+            text-align: center;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/6c58774688.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
-<h1>Konami Code</h1>
+<div id="wrapper">
+    <h1 id="main-header">Konami Code</h1>
+    <p id="entry-log">
+        <!-- Entries will go here as user inputs -->
+    </p>
+    <div id="event-area"></div>
+</div>
 
-<script src="/js/jquery.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
 <script>
+    (function(){
     "use strict";
+        $(document).ready(function() {
+            console.log("JQuery is loaded.");
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-    });
+            let activeEntries = [];
+
+            $(document).keyup(function (event) {
+                $("#event-area").html("");
+                activeEntries.push(event.which);
+                updateEntryLog(event.key);
+                // console.log(activeEntries);
+                checkKonami(activeEntries);
+                resetEntries(activeEntries.length);
+            });
+
+            function checkKonami(entries) {
+                let entriesString = activeEntries.join("");
+                console.log(entriesString);
+                if (entriesString.match(/3838404037393739666513/)) {
+                    $("#event-area").append("<h1>Konami Code Entered!</h1>" + "<p>You have added 30 lives!</p>");
+                    activeEntries = [];
+                    $("#entry-log").html("");
+                }
+            }
+
+            function updateEntryLog(entry) {
+                let finalEntry = ''
+                if(entry === "ArrowUp") {
+                    finalEntry = "<span><i class='fas fa-arrow-circle-up fa-3x'></i></span>";
+                } else if(entry === "ArrowDown") {
+                    finalEntry = "<span><i class='fas fa-arrow-circle-down fa-3x'></i></span>";
+                } else if(entry === "ArrowLeft"){
+                    finalEntry = "<span><i class='fas fa-arrow-circle-left fa-3x'></i></span>";
+                } else if(entry === "ArrowRight"){
+                    finalEntry = "<span><i class='fas fa-arrow-circle-right fa-3x'></i></span>";
+                } else {
+                    finalEntry = "<span class='non-icon-entry'>" + entry + "</span>";
+                }
+                $("#entry-log").append(finalEntry);
+            }
+
+            function resetEntries(numberEntries) {
+                if(numberEntries > 48) {
+                    activeEntries = [];
+                    $("#entry-log").html("");
+                }
+            }
+
+        });
+    })();
 </script>
 </body>
 </html>
