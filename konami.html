@@ -15,6 +15,7 @@
             text-align: center;
             font-size: 60px;
             font-weight: bold;
+            margin-bottom: .5em;
         }
         #entry-log {
             display: grid;
@@ -23,7 +24,7 @@
         }
         span {
             text-align: center;
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
         }
         .non-icon-entry {
             font-size: 40px;
@@ -48,7 +49,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <h1 id="main-header">Konami Code</h1>
+    <h1 id="main-header">KONAMI CODE</h1>
     <p id="entry-log">
         <!-- Entries will go here as user inputs -->
     </p>
@@ -67,8 +68,6 @@
             console.log("JQuery is loaded.");
 
             let activeEntries = [];
-            var soundEffect = new Audio('audio/legend-of-zelda-orarina-of-time-opening-a-large-treasure-chest.mp3');
-            let backgroundImage = $("body");
 
             $(document).keyup(function (event) {
                 $("#event-area").html("");
@@ -76,7 +75,6 @@
                 updateEntryLog(event.key);
                 // console.log(activeEntries);
                 checkKonami(activeEntries);
-                // checkFFVII(activeEntries);
                 resetEntries(activeEntries.length);
             });
 
@@ -88,22 +86,12 @@
                     $("#event-area").append("<h1>Konami Code Entered!</h1>" +
                                             "<h3>You have added 30 lives!</h3>" +
                                             "<div id='heart-box'></div>");
-                    for(let i=0;i<=29;i++) {
+                    for(let i=0;i<30;i++) {
                         await sleep(100);
                         $("#heart-box").append("<img src='img/heart-pixel.png' class='heart'>")
                     }
                 }
             }
-
-            // function checkFFVII(entries) {
-            //     let entriesString = activeEntries.join("");
-            //     if (entriesString.match(/707055/)) {
-            //         activeEntries = [];
-            //         $("#entry-log").html("");
-            //         $("#event-area").append("<h1>FFVII Code Entered</h1>");
-            //         backgroundImage.css("background-image", "url('img/backgrounds/sephiroth.gif')");
-            //     }
-            // }
 
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms))
