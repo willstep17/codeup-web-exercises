@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parks and Such</h1>
+    <dl>
+        <dt>Yellowstone</dt>
+        <dd class="invisible">Even if Yellowstone didn't hold the incredible distinction of
+            being the world's first national park, the 2.2 million-acre park could easily stand on
+            its own for its unique natural attractions and diverse geography. Here, travelers can get
+            lost in the splendor of Yellowstone's many lakes, mountains, buffalo-filled valleys and, of course,
+            its unmatched geysers and hot springs. To avoid the crowds that often plague the park, plan to visit
+            in April, May, September or October.</dd>
+        <dt>Yosemite</dt>
+        <dd class="invisible"></dd>
+        <dt>Glacier National Park</dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+        <dt></dt>
+        <dd class="invisible"></dd>
+    </dl>
+    <button id="toggle-invisibility">Toggle Invisibility</button>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        (function(){
+            "use strict";
+            $(document).ready(function(){
+
+                $("#toggle-invisibility").click(function(){
+                    $("dd").toggleClass("invisible");
+                });
+
+            });
+        })();
+    </script>
+</body>
+</html>
