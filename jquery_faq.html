@@ -14,6 +14,9 @@
 </head>
 <body>
     <h1>Parks and Such</h1>
+    <div>
+        <h1 id="newsletter-sign-up">Would you like to sign up for our newsletter?</h1><span id="hide-newsletter-button"> X</span>
+    </div>
     <dl>
         <dt>Yellowstone</dt>
         <dd class="invisible">Even if Yellowstone didn't hold the incredible distinction of
@@ -51,6 +54,14 @@
                 $("#toggle-invisibility").click(function(){
                     $("dd").toggleClass("invisible");
                 });
+
+                $("#hide-newsletter-button").click(function(){
+                    $("#newsletter-sign-up").toggle();
+                });
+
+                $("dt").click(function(){
+                    $("dd").toggleClass("invisible");
+                })
 
             });
         })();
