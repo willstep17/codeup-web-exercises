@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Blog</title>
+</head>
+<body>
+    <h2>Add a New Blog Entry</h2>
+    <form id="new-blog-post">
+        <label for="title-entry">Title:</label><br>
+        <input type="text" name="title-entry" id="title-entry"><br>
+        <label for="content-entry">Content:</label><br>
+        <textarea rows="10" cols="100" name="content-entry" id="content-entry"></textarea><br>
+        <label for="category-entry">Category:</label><br>
+        <input type="text-area" name="category-entry" id="category-entry"><br>
+        <label for="date-entry">Date:</label><br>
+        <input type="text-area" name="date-entry" id="date-entry"><br>
+        <button type="submit" id="new-entry-submit">Add New Blog Entry</button>
+    </form>
+    <div id="posts">
+
+    </div>
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    (function(){
+        $(document).ready(function(){
+            console.log("JQuery loaded");
+
+            let insertPosts = $("#posts");
+
+            $.ajax("data/blog.json")
+                .done(function(posts){
+                    console.log(posts);
+                    posts.forEach(function(post){
+                        let categoriesString = "";
+                        post.categories.forEach(function(category, i){
+                            categoriesString += "<li>" + category + "</li>";
+                        });
+                        let postHTML =
+                            "<h2>" + post.title + "</h2>" +
+                            "<p>" + post.content + "</p>" +
+                            "<h4>Categories:</h4><ul>" + categoriesString + "</ul>" +
+                            "<p>Date: " + post.date + "</p>";
+                        insertPosts.append(postHTML);
+                    });
+                });
+
+            let newEntryForm = $("#new-blog-post");
+            let addNewBlogPost = $("#new-entry-submit");
+            addNewBlogPost.click(function(e){
+                e.preventDefault();
+                let formInformation = $("#new-blog-post").serializeArray();
+                let postHTML =
+                    "<h2>" + formInformation[0].value + "</h2>" +
+                    "<p>" + formInformation[1].value + "</p>" +
+                    "<h4>Categories:</h4><ul><li>" + formInformation[2].value + "</li></ul>" +
+                    "<p>Date: " + formInformation[3].value + "</p>";
+                console.log(postHTML);
+                insertPosts.append(postHTML);
+                newEntryForm[0].reset();
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

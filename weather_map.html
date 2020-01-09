@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+    <style>
+        html {
+            background-color: skyblue;
+        }
+        #three-day-forecast {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            height: 14em;
+            text-align: center;
+        }
+        .day-card {
+            background: whitesmoke;
+            border: 1px solid darkgray;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Application</h1>
+    <h3>San Antonio, TX</h3>
+    <div id="three-day-forecast">
+        <div class="day-card" id="day-one">Day One</div>
+        <div class="day-card" id="day-two">Day Two</div>
+        <div class="day-card" id="day-three">Day Three</div>
+    </div>
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    // (function(){
+        "use strict";
+        $(document).ready(function(){
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://dark-sky.p.rapidapi.com/29.4241,98.4936?lang=en&units=auto",
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "dark-sky.p.rapidapi.com",
+                    "x-rapidapi-key": "17ff408bcamsha8e31dddfa03b08p14cd56jsnbc6771a4551e"
+                }
+            }
+
+            $.ajax(settings)
+                .done(function (response) {
+                    console.log(response);
+                })
+               .fail(function(status, error){
+                    console.log(status);
+                    console.log(error);
+                });
+
+        });
+    // })();
+</script>
+
+</body>
+</html>

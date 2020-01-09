@@ -47,5 +47,14 @@
             "consumable"
         ],
         "price": 0.05
+    }, {
+        "title": "Screws",
+        "quantity": 2400,
+        "categories": [
+            "tool",
+            "outdoor",
+            "consumable"
+        ],
+        "price": 0.10
     }
 ]
