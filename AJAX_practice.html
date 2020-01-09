@@ -33,6 +33,10 @@
                         console.log(status);
                         //Error will not be returned because we never even knocked on the door
                         console.log(error);
+                    })
+                    //Cleanup step that works if call goes through or not
+                    .always(function(){
+                        console.log("This will always show up.")
                     });
 
                 $.ajax("https://pokeapi.co/api/v2/pokemon/1/")
