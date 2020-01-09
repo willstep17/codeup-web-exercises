@@ -29,21 +29,32 @@
         <h3>Yosemite</h3>
         <dd class="invisible"></dd>
         <h3>Glacier National Park</h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
-        <h3></h3>
-        <dd class="invisible"></dd>
+        <dd class="invisible">Sam</dd>
+        <h3>Great Smoky Mountains National Park</h3>
+        <dd class="invisible">The most-visited of all American national parks, Great Smoky Mountains National Park
+            straddles the boundaries of North Carolina and Tennessee and offers
+            breathtaking scenery and wildlife viewing as well as remnants of Southern Appalachian mountain culture.</dd>
+        <h3>Grand Canyon National Park</h3>
+        <dd class="invisible">The second most-visited of all American national parks,
+            Arizona's ​Grand Canyon National Park belongs on every family's bucket list.​​ Reserve accommodations at a
+            Grand Canyon lodge or campground.​ Mule trips of various lengths are available,
+            leaving from both the South Rim and North Rim.</dd>
+        <h3>Rocky Mountain National Park</h3>
+        <dd class="invisible">Rocky Mountain National Park’s 415 square miles include spectacular mountain
+            environments in Colorado. </dd>
+        <h3>Zion National Park</h3>
+        <dd class="invisible">Utah's first national park is named after Zion Canyon, 15 miles long and up to half a mile deep,
+            cut through red and tan sandstone.</dd>
+        <h3>Olympic National Park</h3>
+        <dd class="invisible">Olympic National Park in Washington State is like three parks in one, taking you from breathtaking
+            mountain vistas with meadows of wildflowers to colorful ocean tidepools and valleys of ancient forests.</dd>
+        <h3>Grand Teton National Park</h3>
+        <dd class="invisible">In northwestern Wyoming, Grand Teton National Park
+            includes the major peaks of the 40-mile-long Teton Range and the
+            northern Jackson Hole Valley. It is just 10 miles south of Yellowstone National Park. </dd>
+        <h3>Acadia National Park</h3>
+        <dd class="invisible">The first eastern national park is set on the rugged coast of Maine. The park is
+            home to myriad plants and animals, as well as the tallest mountain on the Atlantic Coast.</dd>
     </dl>
     <button id="toggle-invisibility">Toggle Invisibility</button>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -64,7 +75,7 @@
                 });
 
                 $("h3").click(function(){
-                    $("dd").toggleClass("invisible");
+                    $(this.first-child()).toggleClass("invisible");
                 });
 
 
