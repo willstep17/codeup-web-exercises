@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Practice</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        (function(){
+            "use strict";
+            $(document).ready(function(){
+                //Asynchronous AJAX call to StarWars API
+                let lukeSkywalker = $.ajax("https://swapi.co/api/people/1");
+
+                //.done waits for the call to proceed with method
+                lukeSkywalker.done(function(person){
+                   console.log(person);
+                });
+
+                //Address purposefully wrong to examine .error method
+                $.ajax("https://pokeapi.co/api/v2/pokmon/2/")
+                    .done(function(pokemon, status, jqXhr){
+                       console.log(pokemon.name);
+                       console.log(status);
+                       console.log(jqXhr);
+                    })
+                    .fail(function(jqXhr, status, error){
+                        console.log("Call Failed");
+                        console.log(status);
+                        //Error will not be returned because we never even knocked on the door
+                        console.log(error);
+                    });
+
+                $.ajax("https://pokeapi.co/api/v2/pokemon/1/")
+                    .done(function(pokemon){
+                        console.log(pokemon.abilities[0].ability.name);
+                    })
+            });
+        })();
+    </script>
+
+</body>
+</html>
