@@ -12,14 +12,28 @@
         }
         button {
             font-size: 20px;
+            margin: .5em;
+        }
+        .jumbotron {
+            background: url("img/backgrounds/tools-background.jpg");
+        }
+        h1 {
+            font-size: 60px;
         }
     </style>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>My Tool Store</h1>
+<div class="jumbotron jumbotron-fluid text-center">
+    <h1 class="display-4 font-weight-bold">Store That Sells Tools</h1>
+</div>
 
-<table id="products">
+<div class="container">
+
+<table id="products" class="table">
     <thead>
         <tr>
             <th>Title</th>
@@ -33,54 +47,60 @@
 
 <button type="button" id="refresh-inventory">Refresh Inventory</button>
 
+</div>
+
+<!-- Bootstrap CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!--JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
-(function() {
-    "use strict";
-    $(document).ready(function(){
+    (function() {
+        "use strict";
+        $(document).ready(function(){
 
-        let insertProducts = $("#insertProducts");
+            let insertProducts = $("#insertProducts");
 
-        let getInventory = function() {
-            $.ajax("data/inventory.json")
-                .done(function(inventory){
-                    insertProducts.empty();
-                    console.log(inventory);
-                    inventory.forEach(function(item){
-                        console.log(item);
-                        let categoriesString = "";
-                        item.categories.forEach(function(category, i){
-                            categoriesString += category + ", "
+            let getInventory = function() {
+                $.ajax("data/inventory.json")
+                    .done(function(inventory){
+                        insertProducts.empty();
+                        console.log(inventory);
+                        inventory.forEach(function(item){
+                            let categoriesString = "";
+                            item.categories.forEach(function(category, i){
+                                categoriesString += category + ", "
+                            });
+                            categoriesString = categoriesString.substring(0, categoriesString.length - 2);
+                            let itemHTML = "<tr>" +
+                                "<td>" + item.title + "</td>" +
+                                "<td>" + item.quantity + "</td>" +
+                                "<td> $" + item.price + "</td>" +
+                                "<td>" + categoriesString + "</td>" +
+                                "</tr>";
+                            insertProducts.append(itemHTML);
                         });
-                        categoriesString = categoriesString.substring(0, categoriesString.length - 2);
-                        let itemHTML = "<tr>" +
-                            "<td>" + item.title + "</td>" +
-                            "<td>" + item.quantity + "</td>" +
-                            "<td> $" + item.price + "</td>" +
-                            "<td>" + categoriesString + "</td>" +
-                            "</tr>";
-                        console.log(itemHTML);
-                        insertProducts.append(itemHTML);
                     });
-                });
-        };
+            };
 
-        getInventory();
-
-        $("#refresh-inventory").click(function(){
             getInventory();
-        })
+
+            $("#refresh-inventory").click(function(){
+                getInventory();
+            });
 
 
-    });
-    // TODO: Create an ajax GET request for /data/inventory.json
+        });
+        // TODO: Create an ajax GET request for /data/inventory.json
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
 </script>
 
 </body>
