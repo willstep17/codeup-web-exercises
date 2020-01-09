@@ -42,7 +42,12 @@
                 $.ajax("https://pokeapi.co/api/v2/pokemon/1/")
                     .done(function(pokemon){
                         console.log(pokemon.abilities[0].ability.name);
-                    })
+                    });
+
+                $.ajax("https://pokeapi.co/api/v2/pokemon/45/")
+                    .done(function(pokemon){
+                        console.log(pokemon);
+                    });
             });
         })();
     </script>
