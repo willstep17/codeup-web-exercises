@@ -105,7 +105,6 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<!--<script src="js/weather-map-mapbox.js"></script>-->
 
 <script>
     (function(){
@@ -144,6 +143,13 @@
                     .done(function (data) {
                         console.log(data);
 
+                        dayOneDate.empty();
+                        dayOneDisplay.empty();
+                        dayTwoDate.empty();
+                        dayTwoDisplay.empty();
+                        dayThreeDate.empty();
+                        dayThreeDisplay.empty();
+
                         dayOneDate.append(buildDateDisplay(0, data));
                         dayOneDisplay.append(buildDailyHTMLString(0, data));
 
@@ -161,13 +167,9 @@
             };
 
             submitLonLatUserInput.click(function(){
-                dayOneDate.empty();
-                dayOneDisplay.empty();
-                dayTwoDate.empty();
-                dayTwoDisplay.empty();
-                dayThreeDate.empty();
-                dayThreeDisplay.empty();
                 getWeatherUpdate(lonUserInput.val(), latUserInput.val());
+                let lngLatArray = [latUserInput.val(), lonUserInput.val()];
+                startingMarker.setLngLat(lngLatArray);
             });
 
             function buildDateDisplay(inputDay, inputData) {
@@ -200,7 +202,20 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 zoom: 11,
-                center: [-98.490594, 29.609842]
+                center: [-98.4936, 29.4241]
+            });
+
+            var startingMarkerOptions = {
+                color: 'orange',
+                draggable: true
+            };
+
+            var startingMarker = new mapboxgl.Marker(startingMarkerOptions)
+            .setLngLat([-98.4936, 29.4241])
+            .addTo(map);
+
+            startingMarker.on("dragend", function(){
+                getWeatherUpdate(startingMarker._lngLat.lat, startingMarker._lngLat.lng)
             });
 
             getWeatherUpdate(29.4241, -98.4936);
