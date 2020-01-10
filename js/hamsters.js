@@ -1,11 +1,9 @@
-function averageHamsterHeight(hamsters) {
+function averageHamsterHeight(inputHamsters) {
     let totalHeight = 0;
-    let totalHamsters = 0;
-    hamsters.forEach(function(hamster){
+    inputHamsters.forEach(function(hamster){
         totalHeight += hamster.heightInMM;
-        totalHamsters ++;
     });
-    let averageHeightInMM = totalHeight / totalHamsters;
+    let averageHeightInMM = totalHeight / inputHamsters.length;
     return "The average height of these hamsters in MM is: " + averageHeightInMM;
 }
 
