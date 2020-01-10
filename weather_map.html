@@ -13,10 +13,10 @@
         #map {
             /* the width and height may be set to any size */
             width: 100%;
-            height: 675px;
+            height: 370px;
         }
         body {
-            background-color: #30c280;
+            background-image: url('img/backgrounds/whiteMarble.png');
         }
         body {
             font-family: 'Roboto', sans-serif;
@@ -54,8 +54,8 @@
             font-family: 'Vesper Libre', serif;
         }
         .day-card {
-            background: whitesmoke;
-            border: 1px solid darkgray;
+            background: #e8e8e8;
+            border: 2px solid #4c4c4c;
             border-radius: 5px;
             padding-bottom: .3em;
         }
@@ -105,7 +105,7 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script src="js/weather-map-mapbox.js"></script>
+<!--<script src="js/weather-map-mapbox.js"></script>-->
 
 <script>
     (function(){
@@ -198,7 +198,7 @@
 
             var map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/navigation-guidance-night-v4',
+                style: 'mapbox://styles/mapbox/streets-v11',
                 zoom: 11,
                 center: [-98.490594, 29.609842]
             });
