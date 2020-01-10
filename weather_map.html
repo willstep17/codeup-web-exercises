@@ -6,46 +6,92 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map</title>
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Custom Style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Vesper+Libre&display=swap" rel="stylesheet">
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <style>
-        html {
-            background-color: skyblue;
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 675px;
+        }
+        body {
+            background-color: #30c280;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        p {
+            margin: 4px;
+        }
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            height: 1.3em;
+            margin: 0;
+        }
+        h2, h3, button, input {
+            margin: 4px;
+        }
+        .vesper-libre {
+            font-family: 'Vesper Libre', serif;
+        }
+        .roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        #forecast-days {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
         #three-day-forecast {
-            height: 12em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2px;
             text-align: center;
+        }
+        .date-display {
+            text-align: center;
+            font-family: 'Vesper Libre', serif;
         }
         .day-card {
             background: whitesmoke;
             border: 1px solid darkgray;
             border-radius: 5px;
+            padding-bottom: .3em;
         }
-        #day-one-high-low {
+        #daily-high-low {
             display: flex;
             justify-content: center;
+        }
+        #lon-lat-user-input {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <h1>Weather Application</h1>
-    <div class="row">
-        <div class="col-4" id="day-one-day"></div>
-        <div class="col-4" id="day-two-day"></div>
-        <div class="col-4" id="day-three-day"></div>
-    </div>
-    <div class="row" id="three-day-forecast">
-        <div class="col-4 day-card" id="day-one"></div>
-        <div class="col-4 day-card" id="day-two"></div>
-        <div class="col-4 day-card" id="day-three"></div>
-    </div>
 
-<!-- Bootstrap CDN -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<h1 class="vesper-libre">Weather Application</h1>
+
+<div id="forecast-days">
+    <div class="date-display" id="day-one-date"></div>
+    <div class="date-display" id="day-two-date"></div>
+    <div class="date-display" id="day-three-date"></div>
+</div>
+<div id="three-day-forecast">
+    <div class="day-card" id="day-one"></div>
+    <div class="day-card" id="day-two"></div>
+    <div class="day-card" id="day-three"></div>
+</div>
+
+<div id='map'></div>
+
+<div id="lon-lat-user-input">
+    <h3>Longitude:</h3>
+    <input type="text" id="lon-user-input">
+    <h3>Latitude:</h3>
+    <input type="text" id="lat-user-input">
+    <button type="submit" id="submit-lon-lat-user-input">Search Weather</button>
+</div>
 
 <!--JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -53,28 +99,111 @@
 <!-- API Keys -->
 <script src="js/keys.js"></script>
 
+<!-- Skycons -->
+<script src="js/skycons.js"></script>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather-map-mapbox.js"></script>
+
 <script>
     (function(){
         "use strict";
         $(document).ready(function(){
 
+            let dayOneDate = $("#day-one-date");
             let dayOneDisplay = $("#day-one");
+
+            let dayTwoDate = $("#day-two-date");
             let dayTwoDisplay = $("#day-two");
+
+            let dayThreeDate = $("#day-three-date");
             let dayThreeDisplay = $("#day-three");
 
-            $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" +
-                darkSkyToken + "/29.4241,-98.4936")
-                .done(function(data){
-                    console.log(data);
-                    let dateObject = new Date(data.currently.time * 1000);
-                    console.log(dateObject);
-                    let dayOneHTML = '<div id="day-one-high-low"><h2>' + data.daily.data[0].temperatureHigh +
-                        " / " + data.daily.data[0].temperatureLow + "</h2></div>";
+            let lonUserInput = $("#lon-user-input");
+            let latUserInput = $("#lat-user-input");
+            let submitLonLatUserInput = $("#submit-lon-lat-user-input");
 
-                    dayOneDisplay.append(dayOneHTML);
+            let iconKey = {
+                clearday: ["CLEAR_DAY", "orange"],
+                clearnight: ["ClEAR_NIGHT", "darkblue"],
+                rain: ["RAIN", "blue"],
+                snow: ["SNOW", "lightblue"],
+                sleet: ["SLEET", "grey"],
+                wind: ["WIND", "white"],
+                fog: ["FOG", "gray"],
+                cloudy: ["CLOUDY", "lightblue"],
+                partlycloudyday: ["PARTLY_CLOUDY_DAY", "lightblue"],
+                partlycloudynight: ["PARTLY_CLOUDY_NIGHT", "darkblue"]
+            };
 
+            let getWeatherUpdate = function(inputLat, inputLon) {
+                $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" +
+                    darkSkyToken + "/" + inputLat + "," + inputLon)
+                    .done(function (data) {
+                        console.log(data);
 
-                });
+                        dayOneDate.append(buildDateDisplay(0, data));
+                        dayOneDisplay.append(buildDailyHTMLString(0, data));
+
+                        dayTwoDate.append(buildDateDisplay(1, data));
+                        dayTwoDisplay.append(buildDailyHTMLString(1, data));
+
+                        dayThreeDate.append(buildDateDisplay(2, data));
+                        dayThreeDisplay.append(buildDailyHTMLString(2, data));
+
+                        animateSkycons(0, data, iconKey);
+                        animateSkycons(1, data, iconKey);
+                        animateSkycons(2, data, iconKey);
+
+                    });
+            };
+
+            submitLonLatUserInput.click(function(){
+                dayOneDate.empty();
+                dayOneDisplay.empty();
+                dayTwoDate.empty();
+                dayTwoDisplay.empty();
+                dayThreeDate.empty();
+                dayThreeDisplay.empty();
+                getWeatherUpdate(lonUserInput.val(), latUserInput.val());
+            });
+
+            function buildDateDisplay(inputDay, inputData) {
+                let thisDate = new Date(inputData.daily.data[inputDay].time * 1000);
+                let dateString = thisDate.toString().substring(0, 15);
+                return "<h2>" + dateString + "</h2>";
+            }
+
+            function buildDailyHTMLString(inputDay, inputData) {
+                return "<div id='daily-high-low'><h2>" + Math.ceil(inputData.daily.data[inputDay].temperatureHigh) +
+                    "° / " + Math.ceil(inputData.daily.data[inputDay].temperatureLow) + "° </h2></div>" +
+                    "<canvas id='icon" + inputDay + "' width='65' height='65'></canvas>" +
+                    "<p>" + inputData.daily.data[inputDay].summary + "</p>" +
+                    "<p><b>Humidity: </b>" + (inputData.daily.data[inputDay].humidity * 100) + "%</p>" +
+                    "<p><b>Wind Speed: </b>" + inputData.daily.data[inputDay].windSpeed + "</p>" +
+                    "<p><b>Pressure: </b>" + inputData.daily.data[inputDay].pressure + "</p>";
+            }
+
+            function animateSkycons(inputDay, inputData, inputIconKey) {
+                let pendingIconString = inputData.daily.data[inputDay].icon;
+                let finalIconString = pendingIconString.split("-").join("");
+                let skycon = new Skycons({"color": inputIconKey[finalIconString][1]});
+                skycon.add("icon" + inputDay, Skycons[inputIconKey[finalIconString][0]]);
+                skycon.play();
+            }
+
+            mapboxgl.accessToken = mapboxToken;
+
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/navigation-guidance-night-v4',
+                zoom: 11,
+                center: [-98.490594, 29.609842]
+            });
+
+            getWeatherUpdate(29.4241, -98.4936);
 
         });
     })();
