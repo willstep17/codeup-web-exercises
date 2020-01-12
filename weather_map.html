@@ -183,7 +183,7 @@
                     "° / " + Math.ceil(inputData.daily.data[inputDay].temperatureLow) + "° </h2></div>" +
                     "<canvas id='icon" + inputDay + "' width='65' height='65'></canvas>" +
                     "<p>" + inputData.daily.data[inputDay].summary + "</p>" +
-                    "<p><b>Humidity: </b>" + (inputData.daily.data[inputDay].humidity * 100) + "%</p>" +
+                    "<p><b>Humidity: </b>" + Math.round((inputData.daily.data[inputDay].humidity * 100)) + "%</p>" +
                     "<p><b>Wind Speed: </b>" + inputData.daily.data[inputDay].windSpeed + "</p>" +
                     "<p><b>Pressure: </b>" + inputData.daily.data[inputDay].pressure + "</p>";
             }
