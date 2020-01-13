@@ -13,7 +13,7 @@
         #map {
             /* the width and height may be set to any size */
             width: 100%;
-            height: 600px;
+            height: 500px;
         }
         body {
             background-image: url('img/backgrounds/whiteMarble.png');
@@ -46,7 +46,7 @@
         #three-day-forecast {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2px;
+            grid-gap: 8px;
             text-align: center;
         }
         .date-display {
@@ -63,8 +63,25 @@
             display: flex;
             justify-content: center;
         }
-        #lon-lat-user-input {
+        #navbar {
             display: flex;
+            justify-content: space-between;
+        }
+        #user-search {
+            display: flex;
+        }
+        #user-search-input {
+            width: 300px;
+            font-size: 20px;
+        }
+        #submit-user-search {
+            font-size: 20px;
+        }
+        #zoom-buttons {
+            display: flex;
+        }
+        #set-zoom-3, #set-zoom-5, #set-zoom-8 {
+            font-size: 20px;
         }
     </style>
 </head>
@@ -83,12 +100,16 @@
     <div class="day-card" id="day-three"></div>
 </div>
 
-<div id="lon-lat-user-input">
-    <h3>Longitude:</h3>
-    <input type="text" id="lon-user-input">
-    <h3>Latitude:</h3>
-    <input type="text" id="lat-user-input">
-    <button type="submit" id="submit-lon-lat-user-input">Search Weather</button>
+<div id="navbar">
+    <div id="user-search">
+        <input type="text" id="user-search-input" placeholder="Search by Location">
+        <button type="submit" id="submit-user-search">Search</button>
+    </div>
+    <div id="zoom-buttons">
+        <button class="medium-text roboto" id="set-zoom-3">View Country</button>
+        <button class="medium-text roboto" id="set-zoom-5">View State</button>
+        <button class="medium-text roboto" id="set-zoom-8">View City</button>
+    </div>
 </div>
 
 <div id='map'></div>
@@ -120,9 +141,12 @@
             let dayThreeDate = $("#day-three-date");
             let dayThreeDisplay = $("#day-three");
 
-            let lonUserInput = $("#lon-user-input");
-            let latUserInput = $("#lat-user-input");
-            let submitLonLatUserInput = $("#submit-lon-lat-user-input");
+            let userSearch = $("#user-search-input");
+            let submitUserSearch = $("#submit-user-search");
+
+            let setZoom3 = $("#set-zoom-3");
+            let setZoom5 = $("#set-zoom-5");
+            let setZoom8 = $("#set-zoom-8");
 
             let iconKey = {
                 clearday: ["CLEAR_DAY", "orange"],
@@ -165,12 +189,6 @@
 
                     });
             };
-
-            submitLonLatUserInput.click(function(){
-                getWeatherUpdate(lonUserInput.val(), latUserInput.val());
-                let lngLatArray = [latUserInput.val(), lonUserInput.val()];
-                startingMarker.setLngLat(lngLatArray);
-            });
 
             function buildDateDisplay(inputDay, inputData) {
                 let thisDate = new Date(inputData.daily.data[inputDay].time * 1000);
@@ -216,6 +234,27 @@
 
             startingMarker.on("dragend", function(){
                 getWeatherUpdate(startingMarker._lngLat.lat, startingMarker._lngLat.lng)
+            });
+
+            submitUserSearch.click(function(){
+                let address = userSearch.val();
+                geocode(address, mapboxToken).then(function(result){
+                    getWeatherUpdate(result[1], result[0]);
+                    map.setCenter(result);
+                    startingMarker.setLngLat(result);
+                });
+            });
+
+            setZoom3.click(function(){
+               map.setZoom(3);
+            });
+
+            setZoom5.click(function(){
+                map.setZoom(5);
+            });
+
+            setZoom8.click(function(){
+                map.setZoom(8);
             });
 
             getWeatherUpdate(29.4241, -98.4936);
