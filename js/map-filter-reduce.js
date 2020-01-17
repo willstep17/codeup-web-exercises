@@ -40,22 +40,36 @@
             }
         ];
 
-        let moreThanThreeLanguages = users.filter(n => n.languages.length >= 3);
-        let userEmail = users.map(n => n.email);
-        let totalYearsExperience = users.reduce((totalYears, person) => {
-            return totalYears + person.yearsOfExperience;
+        let atLeastThreeLanguages = users.filter(n => n.languages.length >= 3);
+        console.log(atLeastThreeLanguages);
+
+        let emails = users.map(n => n.email);
+        console.log(emails);
+
+        let totalYearsExperience = users.reduce((years, user) => {
+            return years += user.yearsOfExperience;
         }, 0);
-        let longestEmail = users.reduce((longest, user) => {
-            return longest.length > user.email.length ? longest : user.email;
-        }, '');
-
-        let userString = users.reduce((userNames, user) => {
-            return userNames += user.name + ' ';
-        }, '');
-
         console.log(totalYearsExperience);
+
+        let longestEmail = users.reduce((longest, user) => {
+            return longest = user.email.length > longest.length ? user.email : longest;
+        }, '');
         console.log(longestEmail);
-        console.log(userString);
+
+        let userNameString = users.reduce((namesString, user) => {
+            return namesString += user.name + ' ';
+        }, '');
+        console.log(userNameString);
+
+        let uniqueLanguages = users.reduce((languages, user) => {
+            for (let language of user.languages) {
+                if (!languages.includes(language)) {
+                    languages.push(language);
+                }
+            }
+            return languages;
+        }, []);
+        console.log(uniqueLanguages);
 
     });
-}());
+})();
