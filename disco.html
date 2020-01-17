@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Hex Generator</title>
+    <style>
+        .color-block {
+            height: 200px;
+            width: auto;
+        }
+        #color-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+        #change-color {
+            text-align: center;
+        }
+        #button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        #disco {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="button-container">
+        <button id="disco">Add Disco</button>
+    </div>
+    <div id="color-container">
+    </div>
+
+    <!-- JQuery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        (function(){
+            "use strict";
+            $(document).ready(function(){
+                const randomHexColor = () => {
+                    let hexReturn = '#';
+                    const hexKey = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+                    let randomNumber = 0;
+                    for(let i=0;i<6;i++){
+                        randomNumber = Math.floor(Math.random() * 16);
+                        hexReturn = hexReturn + hexKey[randomNumber];
+                    }
+                    return hexReturn;
+                };
+
+                let newId = 1;
+                $("#disco").click(function(){
+                    $("#color-container").append(`<div class="color-block" id="new-block-${newId}"></div>`)
+                    let newBlockId = `#new-block-${newId}`;
+                    let randomTimeout = Math.floor(Math.random() * 1000);
+                    console.log(randomTimeout);
+                    setInterval(function(){
+                        $(newBlockId).css("background-color", randomHexColor());
+                    }, randomTimeout);
+                    newId++;
+                });
+
+            });
+        })();
+    </script>
+</body>
+</html>

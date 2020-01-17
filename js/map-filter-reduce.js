@@ -57,7 +57,7 @@
         console.log(longestEmail);
 
         let userNameString = users.reduce((namesString, user) => {
-            return namesString += user.name + ' ';
+            return namesString += user.name + ', ';
         }, '');
         console.log(userNameString);
 
