@@ -14,7 +14,7 @@
         // wait(6000).then(() => console.log("You\'ll see this after 6 seconds"));
 
         const getGithubUserLastDate = function(inputUsername) {
-           return fetch(`https://api.github.com/users/${inputUsername}/events`, {headers: {'Authorization': `token ${gitHubPromiseExerciseToken}`}})
+           return fetch(`https://api.github.com/users/${inputUsername}/events`, {headers: {'Authorization': gitHubPromiseExerciseToken}})
                .then(response => response.json())
                .then(events => {
                    let newCommit = events.find(event => event.type === "PushEvent");
