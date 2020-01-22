@@ -1,0 +1,26 @@
+npm init
+Starting project from scratch
+Create a npm project in the current directory and generate a package.json
+
+npm install
+Cloning an existing project
+Install existing dependencies from package.json
+
+npm install --save LIBRARY_NAME
+Add library to an existing project
+--save flag tells nmp to add the library to our dependencies in the package.json file
+--save is now implied
+
+npm uninstall LIBRARY_NAME
+Uninstall a library
+
+
+npm run SCRIPT_NAME
+Use a script defined in package.json
+
+npm update PACKAGE_NAME
+Update dependencies
+
+npm update
+Update all dependencies
+
