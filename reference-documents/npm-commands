@@ -14,14 +14,14 @@ Add library to an existing project
 npm uninstall LIBRARY_NAME
 Uninstall a library
 
-npm run SCRIPT_NAME
-Use a script defined in package.json
-
 npm update PACKAGE_NAME
 Update dependencies
 
 npm update
 Update all dependencies
+
+npm run SCRIPT_NAME
+Use a script defined in package.json
 
 Important Libraries:
 npm install @babel/core
