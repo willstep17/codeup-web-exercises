@@ -14,7 +14,6 @@ Add library to an existing project
 npm uninstall LIBRARY_NAME
 Uninstall a library
 
-
 npm run SCRIPT_NAME
 Use a script defined in package.json
 
@@ -23,4 +22,27 @@ Update dependencies
 
 npm update
 Update all dependencies
+
+Important Libraries:
+npm install @babel/core
+npm install @babel/preset-env
+npm install babel-preset-env
+npm install babel-loader
+npm install webpack
+
+Webpack Scripts for package.json:
+"build": "webpack",
+"build:watch": "webpack --watch",
+"build:production": "webpack -p"
+
+npm run build
+Build project with webpack
+
+npm run build:watch
+Watches source files and rebuilds project when anything is updated
+
+npm run build:production
+Webpack creates a production build of project
+
+
 
