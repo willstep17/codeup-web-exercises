@@ -6,5 +6,5 @@ console.log(data.obj.whichSideOfTheForce);
 data.sayHello();
 
 //From node-practice-two.js
-dataTwo.sayHello()
+dataTwo.sayHello();
 console.log(dataTwo.car.miles);
