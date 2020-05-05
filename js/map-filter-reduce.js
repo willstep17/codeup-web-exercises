@@ -40,6 +40,9 @@
             }
         ];
 
+        let oneMoreYearExperience = users.map(n => n.yearsOfExperience += 1);
+        console.log(oneMoreYearExperience);
+
         let atLeastThreeLanguages = users.filter(n => n.languages.length >= 3);
         console.log(atLeastThreeLanguages);
 
