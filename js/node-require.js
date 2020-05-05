@@ -7,4 +7,4 @@ data.sayHello();
 
 //From node-practice-two.js
 dataTwo.sayHello();
-console.log(dataTwo.car.miles)
+console.log(dataTwo.car.miles);

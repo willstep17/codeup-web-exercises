@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Workshop</title>
+</head>
+<body>
+    <h1 id="load-here"></h1>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        (function(){
+            "use strict";
+            $(document).ready(function(){
+                let loadTo = $("#load-here");
+                let toLoad = $.ajax("https://pokeapi.co/api/v2/pokemon/2/")
+                    .done(function(pokemon) {
+                        loadTo.append(pokemon.name);
+                        console.log(pokemon);
+                        console.log(pokemon.moves[2].move.name);
+                    });
+            });
+        }());
+    </script>
+
+</body>
+</html>
