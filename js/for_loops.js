@@ -32,6 +32,8 @@ for(var n=100;n>=5;n-=5) {
     console.log(m);
 }
 
+
+
     function countWords(sentence) {
         const words = sentence.split(' '); // transform a sentence into an array of words
         const wordCountObject = words.reduce((wordCounts, word) => {
